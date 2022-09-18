@@ -23,7 +23,7 @@ body{
     position:absolute;
     z-index:1;
     width: 100vw;
-    top: 0px;
+    top: -1px;
 }
 .water{
     /* height: 60vh; */
@@ -32,14 +32,38 @@ body{
 }
 .bgBack{
     position: relative;
-     background: url('https://bestanimations.com/media/water/1788108163seethough-water-ripples-gif.gif');
+     background: url('https://c.tenor.com/FRdygPZHH28AAAAC/sea-blue.gif');
 }
 .image{
+    /* position: fixed; */
+    margin-top:-3px;
     width: 100%;
-    height: 99.3vh;
+    height: 99.9vh;
+    /* height: 100vh; */
     /* object-fit:cover; */
     overflow-y:auto;
 }
+.hanumanLink{
+    transform: translatey(0px);
+    -webkit-animation: float 3s ease-in-out 5s infinite;
+            animation: float 3s ease-in-out 5s infinite;
+}
+@keyframes float {
+    0% {
+      box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+      transform: translatey(0px);
+    }
+    50% {
+      box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
+      transform: translatey(-20px);
+    }
+    100% {
+      box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+      transform: translatey(0px);
+    }
+  }
+  
+
 .hanuman{
     z-index:3;
     width: 20vw;

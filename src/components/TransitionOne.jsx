@@ -1,17 +1,38 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import "../assets/css/TransitionOne.css";
-import bgFront from "../assets/images/mainBackground.png";
-import water from "../assets/images/water.png";
-import setuLand from "../assets/images/islandAndSetu.png";
-import treeOne from "../assets/images/palm tree.png";
-import treeTwo from "../assets/images/RamSetuTJustop.png";
-import gameBoard from "../assets/images/game name board.png";
+// import bgFront from "../assets/images/mainBackground.png";
+// import water from "../assets/images/water.png";
+// import setuLand from "../assets/images/islandAndSetu.png";
+// import treeOne from "../assets/images/palm tree.png";
+// import treeTwo from "../assets/images/RamSetuTJustop.png";
+// import gameBoard from "../assets/images/game name board.png";
 import image from "../assets/images/image.png";
 import hanuman from "../assets/images/hanuman.png";
-
+// import audIntro from "../assets/audio/audIntro.mp3";
 const TransitionOne = () => {
+  let hoverCheck = 0;
+  // const audio = new Audio(audIntro);
+  // const start = () => {
+  //   audio.play();
+  // };
+  
+  useEffect(()=>{
+    // audio.play();
+
+  },[]);
+
+  function callHover(){
+    if(hoverCheck === 0){
+      // audio.play();
+      hoverCheck = 1;
+    }
+  }
+
   return (
     <div >
+      {/* <div>
+      <button onClick={start}>Play</button>
+    </div> */}
 
 {/*     
         <div>
@@ -29,9 +50,11 @@ const TransitionOne = () => {
         </div>         */}
 
         
-        <div className='bgBack'>
+        <div className='bgBack' onMouseEnter={()=>{
+          callHover();
+        }}>
           <img src={image} className="image" alt="water" />
-          <img src={hanuman} className="hanuman" alt="water" />
+          <div className="hanumanLink"><img src={hanuman} className="hanuman" alt="water" /></div>
         </div>
     </div>
   )
