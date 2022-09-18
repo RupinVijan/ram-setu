@@ -1,0 +1,23 @@
+.background{
+    background-image: url("../images/Login_Background.png");
+    width: 560px;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+/* .main-div{
+    background-image: url("../images/Login_Background.png");
+    width: 560px;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;0
+    background-position: center center;
+}
+.background{
+    background-image: url("../images/Login_Background.png");
+    object-fit: fill;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+} */

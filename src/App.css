@@ -1,7 +1,19 @@
 @media screen and (min-width: 500px) {
   .App{
-    display: none;
-/*     justify-content: center;
-    background-color: #f8f8f8; */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* background-color: #f8f8f8;  */
   }
+}
+
+.App{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  /* background-color: #f8f8f8;  */
 }

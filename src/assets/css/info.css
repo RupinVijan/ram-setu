@@ -1,0 +1,68 @@
+/* 
+.modal{
+    background-image:url("../images/Wooden\ block.png") ;
+    object-fit: cover;
+} */
+/* .woodenBlock{
+    object-fit: fill;
+} */
+
+/* .customModal{
+    background: transparent;
+
+    max-width: 500px;
+    width: 100%;
+    /* opacity: 0; */
+    
+.modal-input{
+   position: relative;
+   /* align-items: center; */
+   height: 50%;
+   width: 45%;
+ 
+}
+.woodenBlock{
+    /* height: 250px;
+    width: 250px; */
+    position: relative;
+    object-fit: fill;
+    width: 100%;
+  }
+  .nameBox{
+    
+    font-size: 2rem;
+    color: white;
+    position: absolute;
+    top: 85px;
+    
+    background: transparent;
+    border: transparent;
+    outline-width: 0;
+  }
+  
+  .nameBox::placeholder{
+    color: white;
+  }
+
+  .numBox::placeholder{
+    color: white;
+  }
+  
+  .numBox{
+    font-size: 2rem;
+    position: absolute;
+    top: 315px;
+    
+    color: white;
+   
+    background: transparent;
+    border: transparent;
+    outline-width: 0;
+    
+  }
+  @media screen and (max-width: 500px) {
+    .modal-input{
+        height: 40%;
+        width: 55%;
+    }
+  }
