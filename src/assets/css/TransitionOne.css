@@ -1,0 +1,83 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+}
+.header_img{
+    width:100%;
+    max-height: 30vh;
+    position:absolute;
+    object-fit: cover;
+    z-index:2
+}
+
+.bgFront{
+    height: 300px;
+    /* height: 40vh; */
+    width: 100vw;
+    z-index: 0;
+    position: relative;
+}
+.setuLandFront{
+    position:absolute;
+    z-index:1;
+    width: 100vw;
+    top: 0px;
+}
+.water{
+    /* height: 60vh; */
+    height: 400px;
+    width: 100vw;
+}
+.bgBack{
+    position: relative;
+     background: url('https://bestanimations.com/media/water/1788108163seethough-water-ripples-gif.gif');
+}
+.image{
+    width: 100%;
+    height: 99.3vh;
+    /* object-fit:cover; */
+    overflow-y:auto;
+}
+.hanuman{
+    z-index:3;
+    width: 20vw;
+    height: 20vh;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transform: translateY(0vh);
+    animation: rise 3s ease-in 5s forwards;
+}
+
+@keyframes rise {
+    to{
+        transform: translateY(-50vh) translateX(40vw) scale(1.5);
+    }
+}
+
+@media screen and (min-width: 400px) {
+    .header_img{
+        
+    }
+}
+
+
+.treeLeft{
+    width:100%;
+    position:relative;
+    left:-30%;
+    top:-25%
+}
+
+.treeRight{
+    width:100%;
+    position:relative;
+    right:-35%;
+    top:-14%
+}
+
+.gameBoard{
+    width:100%
+}
