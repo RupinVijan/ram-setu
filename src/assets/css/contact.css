@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text&family=Mukta:wght@300&family=Rubik&display=swap');
 .background{
     background-image: url('../images/Login_Background.png');
     width: 100vw;
+    max-width: 640px;
     height: 100vh;
     background-repeat: no-repeat;
     background-size: cover;
@@ -8,18 +10,23 @@
     position: absolute;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
+    
 }
 .input-box{
     position: absolute;
-  
+   max-width: 740px;
+   
     width: 120%;
     
 }
 .nameinput{
     position: absolute;
     border-radius: 9px;
+    color: #e6ab74;
+    font-size:18px;
     background-color: black;
-    opacity: 65%;
+    opacity: 55%;
     height: 5.5%;
     top: 39%;
     width: 60%;
@@ -27,28 +34,44 @@
 .noinput{
     position: absolute;
     border-radius: 9px;
+    color: #e6ab74;
+    font-size:18px;
     background-color: black;
-    opacity: 65%;
+    opacity: 55%;
     top: 50%;
     height: 5.5%;
     width: 60%;
 
+}
+.labelName{
+    z-index: 8;
+    transform: translatey(-12px);
+    font-family:'Crimson Text', serif;
+    font-size: 1.5rem;
+}
+.labelNumber{
+    z-index: 8;
+    transform: translatey(-94px);
+    
+    font-family:'Crimson Text', serif;
+    font-size: 1.5rem;
 }
 .button1{
     position: absolute;
     top: 60%;
     height: 5%;
     width: 20%;
-    background-image: linear-gradient(to right, #42855B ,#6FEDD6 );
+    background-image: linear-gradient(to right, #b95212cb ,#9c530f );
+    opacity: 85%;
+    border-radius: 10px;
     
-    border-radius: 8px;
 
    
 
 }
 .button1:hover{
     background-color: white;
-    background-image: linear-gradient(to right, #C21010 ,#F65A83 );
+    background-image: linear-gradient(to right, #9c530f ,#b95212cb );
     color: black
   
 
