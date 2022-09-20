@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, { useEffect } from "react";
 import "../assets/css/TransitionOne.css";
 // import bgFront from "../assets/images/mainBackground.png";
 // import water from "../assets/images/water.png";
@@ -15,26 +15,25 @@ const TransitionOne = () => {
   // const start = () => {
   //   audio.play();
   // };
-  
-  useEffect(()=>{
+
+  useEffect(() => {
     // audio.play();
+  }, []);
 
-  },[]);
-
-  function callHover(){
-    if(hoverCheck === 0){
+  function callHover() {
+    if (hoverCheck === 0) {
       // audio.play();
       hoverCheck = 1;
     }
   }
 
   return (
-    <div >
+    <div>
       {/* <div>
       <button onClick={start}>Play</button>
     </div> */}
 
-{/*     
+      {/*     
         <div>
           <img src={treeTwo} className="header_img"/>
          </div>
@@ -49,21 +48,26 @@ const TransitionOne = () => {
         <img src={water} className="water" alt="water" />
         </div>         */}
 
-        
-        <div className='bgBack' onMouseEnter={()=>{
+      <div
+        className="bgBack"
+        onMouseEnter={() => {
           callHover();
-        }}>
-          <img src={image} className="image" alt="water" />
-          <div className="hanumanLink"><img src={hanuman} className="hanuman" alt="water" /></div>
+        }}
+      >
+        <div className="hanumanLink">
+          <img src={hanuman} className="hanuman" alt="water" />
         </div>
+        <img src={image} className="image" alt="water" />
+      
+      </div>
     </div>
-  )
-}
+  );
+};
 
 export default TransitionOne;
 
-        // <div style={{display:"flex"}}>
-        //   <img src={treeOne}  className="treeLeft"/>
-        //    <img src={gameBoard} className="gameBoard"/>
-        //   <img src={treeTwo} className="treeRight"/>
-        // </div>
+// <div style={{display:"flex"}}>
+//   <img src={treeOne}  className="treeLeft"/>
+//    <img src={gameBoard} className="gameBoard"/>
+//   <img src={treeTwo} className="treeRight"/>
+// </div>
