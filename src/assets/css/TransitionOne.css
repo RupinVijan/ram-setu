@@ -4,99 +4,19 @@
 body {
   margin: 0;
 }
-.header_img {
-  width: 100%;
-  max-height: 30vh;
-  position: absolute;
-  object-fit: cover;
-  z-index: 2;
-}
 
-.bgFront {
-  height: 300px;
-  /* height: 40vh; */
-  width: 100vw;
-  z-index: 0;
-  position: relative;
-}
-.setuLandFront {
-  position: absolute;
-  z-index: 1;
-  width: 100vw;
-  top: -1px;
-}
-.water {
-  /* height: 60vh; */
-  height: 400px;
-  width: 100vw;
-}
 .bgBack {
   position: relative;
   background: url("https://c.tenor.com/FRdygPZHH28AAAAC/sea-blue.gif");
 }
 .image {
-  /* position: fixed; */
   margin-top: -3px;
   width: 100%;
   height: 99.9vh;
-  /* height: 100vh; */
-  /* object-fit:cover; */
   overflow-y: auto;
 }
 
-/*@keyframes float {
-      0% {
-        box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
-        transform: translatey(0px);
-      }
-      50% {
-        box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
-        transform: translatey(-20px);
-      }
-      100% {
-        box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
-        transform: translatey(0px);
-      }
-    } */
-/* 
-  .hanuman {
-    z-index: 3;
-    width: 20vw;
-    height: 20vh;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    transform: translateY(0vh);
-    animation: rise  6s ease-in  5 forwards;
-   }
-   
-   
-  @keyframes rise {
-    30% {
-      transform: translateY(-80vh) translateX(0vw);
-    }
-    40% {
-      transform: translateY(-80vh) translateX(0vw) rotate(20deg);
-    }
-    55% {
-      transform: translateY(-80vh) translateX(80vw) rotate(20deg);
-    }
-    60% {
-      transform: translateY(-80vh) translateX(80vw) rotate(0deg);
-    }
-    75% {
-      transform: translateY(-50vh) translateX(80vw);
-    }
-  
-    90% {
-      transform: translateY(-50vh) translateX(40vw);
-    }
-    100% {
-      transform: translateY(-50vh) translateX(40vw) scale(1.5);
-    }
-  } */
-
-.hanuman {
+.hanumanAnimated {
   z-index: 5;
   width: 15vw;
   height: 15vh;
@@ -161,31 +81,8 @@ body {
 }
 
 @media screen and (min-width: 425px) {
-  .hanuman {
+  .hanumanAnimated {
     top: 30px;
     left: 10%;
   }
-}
-
-/* @media screen and (min-width: 400px) {
-  .header_img {
-  }
-} */
-
-.treeLeft {
-  width: 100%;
-  position: relative;
-  left: -30%;
-  top: -25%;
-}
-
-.treeRight {
-  width: 100%;
-  position: relative;
-  right: -35%;
-  top: -14%;
-}
-
-.gameBoard {
-  width: 100%;
 }
