@@ -25,7 +25,7 @@
   position: absolute;
   top: calc(100px + 20%);
   left: 50%;
-  transform: translate(-50% , -50%);
+  transform: translate(-50%, -50%);
   width: 40%;
   height: 40%;
   object-fit: contain;
@@ -43,25 +43,33 @@
   z-index: 5;
 }
 
-.Goal{
+.Goal {
   position: absolute;
   width: 30px;
   top: calc(100px + 40%);
   left: 50%;
-  transform: translate(-50% , -50%);
+  transform: translate(-50%, -50%);
   height: 30px;
   border-radius: 50%;
-  border: 2px  rgb(255, 0, 0) dotted;
+  border: 2px rgb(255, 0, 0) dotted;
   z-index: 20;
 }
 
-.chat{
+.chat {
   position: absolute;
   width: 165px;
   margin-left: -100px;
   margin-top: -30px;
   z-index: 10;
-  animation: float 2s ease-in-out infinite
+  animation: float 2s ease-in-out infinite;
+}
+
+.stone-fixed {
+  position: absolute;
+  left: 47%;
+  top: 56%;
+  height: 20px;
+  z-index: 10;
 }
 
 /* .imgContainer{
@@ -69,18 +77,20 @@
 } */
 
 @keyframes float {
-  0%{
+  0% {
     transform: TranslateY(-10px);
   }
-  50%{
+  50% {
     transform: TranslateY(0);
   }
-  100%{
+  100% {
     transform: TranslateY(-10px);
   }
 }
 
-.chatContainer{
+.chatContainer {
+  position: absolute;
+  top: 0;
   width: 100%;
   height: 100%;
   display: flex;
@@ -88,22 +98,23 @@
   align-items: center;
 }
 
-.stone{
-  width: 100px;
-  left: 30%;
+.stone {
+  width: 50px;
+  left: 45%;
+  bottom: 40px;
   position: absolute;
   bottom: 0;
   z-index: 10;
 }
 
-@media screen  and  (max-width: 290px){
-  .setu-top{
+@media screen and (max-width: 290px) {
+  .setu-top {
     top: calc(100px + 15%);
   }
-  .Goal{
+  .Goal {
     top: calc(100px + 34%);
   }
-  .chat{
+  .chat {
     margin-top: -90px;
   }
 }
