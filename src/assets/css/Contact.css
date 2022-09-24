@@ -11,13 +11,35 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
+
 }
+
+.animationClass {
+  animation: trans 4s ease-in forwards ;
+}
+
 .input-box {
   position: absolute;
   max-width: 740px;
-
   width: 120%;
 }
+
+.targetAnimation {
+  
+}
+
+
+@keyframes trans{
+  from{
+    transform: translateY(0vh);
+
+  }
+  to{
+    transform: translateY(-20vh);
+  }
+}
+
+
 .nameinput {
   position: absolute;
   border-radius: 9px;

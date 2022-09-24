@@ -11,6 +11,11 @@ const Contact = () => {
     window.localStorage.setItem("number", number);
     console.log("item saved", name, number);
     setTrigger(true);
+
+    let blockDiv = document.querySelector('.targetAnimation'); 
+    blockDiv.className.add('animationClass');
+
+
   };
   useEffect(() => {
     const data1 = window.localStorage.getItem("name");
@@ -30,14 +35,14 @@ const Contact = () => {
     <div className="background d-flex justify-content-center">
       <img
         src={require("../../assets/images/LableBox.png")}
-        className="input-box"
+        className="input-box targetAnimation"
         alt="LabelBox"
       />
-      <label className="labelName d-flex"></label>
+      <label className="labelName d-flex targetAnimation"></label>
 
       <input
         type="text"
-        className="nameinput"
+        className="nameinput targetAnimation"
         placeholder="Name"
         value={name}
         onChange={(e) => {
@@ -47,7 +52,7 @@ const Contact = () => {
 
       <input
         type="text"
-        className="noinput"
+        className="noinput targetAnimation"
         placeholder="Phone number"
         value={number}
         onChange={(e) => {
@@ -55,7 +60,7 @@ const Contact = () => {
         }}
       />
 
-      <label className="labelNumber d-flex justify-content-center"></label>
+      <label className="labelNumber d-flex justify-content-center targetAnimation"></label>
       {/* <button type="submit" className="button1" onClick={save}>
         OK
       </button> */}
