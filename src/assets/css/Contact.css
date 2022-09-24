@@ -54,18 +54,20 @@
   font-size: 1.5rem;
 }
 .button1 {
+  font-weight: 500;
+  color: white;
   position: absolute;
   top: 60%;
   height: 5%;
   width: 20%;
-  background-image: linear-gradient(to right, #b95212cb, #9c530f);
+  background-image: linear-gradient(to right, #96f147cb, #77c21b);
   opacity: 85%;
   border-radius: 10px;
 }
 .button1:hover {
   background-color: white;
-  background-image: linear-gradient(to right, #9c530f, #b95212cb);
-  color: black;
+  background-image: linear-gradient(to right, #96f147cb, #77c21b);
+  color: white;
 }
 /* .imag{
     

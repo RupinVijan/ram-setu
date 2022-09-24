@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from "react";
 import "../../assets/css/Contact.css";
+import Mask from "../Mask/Mask";
 const Contact = () => {
   const [name, setName] = useState();
   const [number, setNumber] = useState();
+  const[trigger,setTrigger]=useState(false);
+
   const save = () => {
     window.localStorage.setItem("name", name);
     window.localStorage.setItem("number", number);
     console.log("item saved", name, number);
+    setTrigger(true);
   };
   useEffect(() => {
     const data1 = window.localStorage.getItem("name");
@@ -52,9 +56,10 @@ const Contact = () => {
       />
 
       <label className="labelNumber d-flex justify-content-center"></label>
-      <button type="submit" className="button1" onClick={save}>
+      {/* <button type="submit" className="button1" onClick={save}>
         OK
-      </button>
+      </button> */}
+      {trigger?(<Mask/>):(<button type="submit" className="button1" onClick={save}>Show Mask</button>)}
     </div>
   );
 };
