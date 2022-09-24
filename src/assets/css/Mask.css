@@ -7,30 +7,28 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  position: absolute;
+  position: fixed;
   align-items: center;
   justify-content: center;
   overflow: hidden;
 }
 .mask {
-  
- 
-  top: 0px;
+  position: absolute;
+  bottom: 0;
   left: 0;
-  height: 100vh;
   
-  z-index: 9;
-  backdrop-filter: blur(4px);
+
 }
 .hanuman {
   z-index: 10;
  
   
-  max-width: 740px;
+  max-width: 500px;
   position: absolute;
+  left: 0;
   
   bottom:0;
-  width: 80%;
+  width: 85%;
   
  /* right: 40%; */
 }

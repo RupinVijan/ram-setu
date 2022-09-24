@@ -1,4 +1,5 @@
 * {
+ 
   box-sizing: border-box;
 }
 body {
@@ -6,7 +7,7 @@ body {
 }
 
 .bgBack {
-  position: relative;
+  position: fixed;
   background: url("https://c.tenor.com/FRdygPZHH28AAAAC/sea-blue.gif");
 }
 .image {
