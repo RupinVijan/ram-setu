@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import "../../assets/css/Contact.css";
 import Mask from "../Mask/Mask";
 const Contact = () => {
-  const [name, setName] = useState();
-  const [number, setNumber] = useState();
+  const [name, setName] = useState(' ');
+  const [number, setNumber] = useState(' ');
   const[trigger,setTrigger]=useState(false);
 
   const save = () => {
