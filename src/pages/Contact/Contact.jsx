@@ -13,7 +13,13 @@ const Contact = () => {
     setTrigger(true);
 
     let blockDiv = document.querySelector('.targetAnimation'); 
-    blockDiv.className.add('animationClass');
+    blockDiv.classList.add('animationClass');
+    let nameinput = document.querySelector('.nameinput'); 
+    nameinput.classList.add('animationClass');
+    let noinput = document.querySelector('.noinput'); 
+    noinput.classList.add('animationClass');
+    let buton = document.querySelector('.button1'); 
+    buton.classList.add('animationClass');
 
 
   };
@@ -42,7 +48,7 @@ const Contact = () => {
 
       <input
         type="text"
-        className="nameinput targetAnimation"
+        className="nameinput "
         placeholder="Name"
         value={name}
         onChange={(e) => {
@@ -52,7 +58,7 @@ const Contact = () => {
 
       <input
         type="text"
-        className="noinput targetAnimation"
+        className="noinput "
         placeholder="Phone number"
         value={number}
         onChange={(e) => {
@@ -60,7 +66,7 @@ const Contact = () => {
         }}
       />
 
-      <label className="labelNumber d-flex justify-content-center targetAnimation"></label>
+      <label className="labelNumber d-flex justify-content-center "></label>
       {/* <button type="submit" className="button1" onClick={save}>
         OK
       </button> */}
