@@ -1,12 +1,27 @@
 import React, { useEffect, useState } from "react";
 import "../../assets/css/Contact.css";
+import Mask from "../Mask/Mask";
 const Contact = () => {
-  const [name, setName] = useState();
-  const [number, setNumber] = useState();
+  const [name, setName] = useState(' ');
+  const [number, setNumber] = useState(' ');
+  const[trigger,setTrigger]=useState(false);
+
   const save = () => {
     window.localStorage.setItem("name", name);
     window.localStorage.setItem("number", number);
     console.log("item saved", name, number);
+    setTrigger(true);
+
+    // let blockDiv = document.querySelector('.targetAnimation'); 
+    // blockDiv.classList.add('animationClass');
+    // let nameinput = document.querySelector('.nameinput'); 
+    // nameinput.classList.add('animationClass');
+    // let noinput = document.querySelector('.noinput'); 
+    // noinput.classList.add('animationClass');
+    // let buton = document.querySelector('.button1'); 
+    // buton.classList.add('animationClass');
+
+
   };
   useEffect(() => {
     const data1 = window.localStorage.getItem("name");
@@ -26,14 +41,14 @@ const Contact = () => {
     <div className="background d-flex justify-content-center">
       <img
         src={require("../../assets/images/LableBox.png")}
-        className="input-box"
+        className="input-box targetAnimation"
         alt="LabelBox"
       />
-      <label className="labelName d-flex"></label>
+      <label className="labelName d-flex targetAnimation"></label>
 
       <input
         type="text"
-        className="nameinput"
+        className="nameinput "
         placeholder="Name"
         value={name}
         onChange={(e) => {
@@ -43,7 +58,7 @@ const Contact = () => {
 
       <input
         type="text"
-        className="noinput"
+        className="noinput "
         placeholder="Phone number"
         value={number}
         onChange={(e) => {
@@ -51,10 +66,11 @@ const Contact = () => {
         }}
       />
 
-      <label className="labelNumber d-flex justify-content-center"></label>
-      <button type="submit" className="button1" onClick={save}>
+      <label className="labelNumber d-flex justify-content-center "></label>
+      {/* <button type="submit" className="button1" onClick={save}>
         OK
-      </button>
+      </button> */}
+      {trigger?(<Mask/>):(<button type="submit" className="button1" onClick={save}>Show Mask</button>)}
     </div>
   );
 };

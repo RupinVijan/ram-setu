@@ -7,17 +7,39 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  position: absolute;
+  position: fixed;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+
 }
+
+.animationClass {
+  animation: trans 2s ease-in forwards ;
+}
+
 .input-box {
   position: absolute;
   max-width: 740px;
-
   width: 120%;
 }
+
+.targetAnimation {
+  
+}
+
+
+@keyframes trans{
+  from{
+    transform: translateY(0vh);
+
+  }
+  to{
+    transform: translateY(-20vh);
+  }
+}
+
+
 .nameinput {
   position: absolute;
   border-radius: 9px;
@@ -54,18 +76,20 @@
   font-size: 1.5rem;
 }
 .button1 {
+  font-weight: 500;
+  color: white;
   position: absolute;
   top: 60%;
   height: 5%;
   width: 20%;
-  background-image: linear-gradient(to right, #b95212cb, #9c530f);
+  background-image: linear-gradient(to right, #96f147cb, #77c21b);
   opacity: 85%;
   border-radius: 10px;
 }
 .button1:hover {
   background-color: white;
-  background-image: linear-gradient(to right, #9c530f, #b95212cb);
-  color: black;
+  background-image: linear-gradient(to right, #96f147cb, #77c21b);
+  color: white;
 }
 /* .imag{
     

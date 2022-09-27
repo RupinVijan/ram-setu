@@ -61,6 +61,7 @@ const Setu = () => {
         >
           <img ref={stony} src={stone} alt="stone" className="stone" />
         </Draggable>
+        
       ) : null}
       {Complete === false ? (
         <div className="Goal" ref={Goal}></div>

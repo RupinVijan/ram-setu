@@ -2,11 +2,11 @@ import React from "react";
 import "../../assets/css/Mask.css";
 const Mask = () => {
   return (
-    <div className="background d-flex justify-content-center">
-      <div className="mask"></div>
+    <div className="d-flex ">
+      <div className=" d-flex mask"></div>
       <img
         src={require("../../assets/images/hanuman.png")}
-        className="hanuman"
+        className="hanuman d-flex align-items-center"
         alt="Hanuman img"
       />
     </div>
