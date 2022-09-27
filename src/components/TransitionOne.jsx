@@ -1,14 +1,11 @@
 import React, { useEffect, useRef } from "react";
 import "../assets/css/TransitionOne.css";
-import image from "../assets/images/image.png";
-import hanuman from "../assets/images/hanuman.png";
+// import image from "../assets/images/image.png";
+// import hanuman from "../assets/images/hanuman.png";
 // import audIntro from "../assets/audio/audIntro.mp3";
 import homeVideo from "../assets/video/FInal_Render.mp4";
-import silentVideo from "../assets/video/silent_video.mp4";
-import homeAudio from "../assets/audio/FInal_Render.mp3";
 import initialImage from "../assets/images/initial-image.png";
 const TransitionOne = () => {
-  let hoverCheck = 0;
   const ref = useRef(null);
 
   // const audio = new Audio(audIntro);
@@ -20,21 +17,11 @@ const TransitionOne = () => {
     // audio.play();
   }, []);
 
-  function callHover() {
-    if (hoverCheck === 0) {
-      // audio.play();
-      hoverCheck = 1;
-    }
-  }
-
   function playVideo(e){
     console.log(e.target);
     e.target.style.display = "none";
     const videoPlay = ref.current;
     videoPlay.play();
-
-
-
   }
 
   return (
@@ -52,7 +39,7 @@ const TransitionOne = () => {
         <img src={image} className="image" alt="water" />
       
       </div> */}
-      <img className="initialImage" src={initialImage} onClick={(e)=>{
+      <img className="initialImage" src={initialImage} alt="Front" onClick={(e)=>{
         playVideo(e);
       }}/>
       <video  autoPlay className="homeVideo" id="myVideo"  ref={ref} >
