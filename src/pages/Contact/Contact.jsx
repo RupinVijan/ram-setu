@@ -12,14 +12,14 @@ const Contact = () => {
     console.log("item saved", name, number);
     setTrigger(true);
 
-    let blockDiv = document.querySelector('.targetAnimation'); 
-    blockDiv.classList.add('animationClass');
-    let nameinput = document.querySelector('.nameinput'); 
-    nameinput.classList.add('animationClass');
-    let noinput = document.querySelector('.noinput'); 
-    noinput.classList.add('animationClass');
-    let buton = document.querySelector('.button1'); 
-    buton.classList.add('animationClass');
+    // let blockDiv = document.querySelector('.targetAnimation'); 
+    // blockDiv.classList.add('animationClass');
+    // let nameinput = document.querySelector('.nameinput'); 
+    // nameinput.classList.add('animationClass');
+    // let noinput = document.querySelector('.noinput'); 
+    // noinput.classList.add('animationClass');
+    // let buton = document.querySelector('.button1'); 
+    // buton.classList.add('animationClass');
 
 
   };

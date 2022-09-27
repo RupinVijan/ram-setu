@@ -19,7 +19,8 @@
   left: 0;
   height: 100%;
   width: 100%;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(20px);
+  animation:blur 2s;
  
   
 
@@ -36,4 +37,14 @@
   width: 85%;
   
  /* right: 40%; */
+}
+
+@keyframes blur {
+  0%{
+    backdrop-filter: blur(0px); 
+  }
+  100%{
+    backdrop-filter: blur(20px); 
+  }
+  
 }
