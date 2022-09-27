@@ -30,6 +30,23 @@ body {
   animation: move 15000ms ease-in 2s forwards;
 }
 
+.homeVideo{
+  width: 100vw;
+  height: 100vh;
+  object-fit: fill;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.initialImage{
+  z-index: 10;
+  width: 100vw;
+  height: 100vh;
+  object-fit: fill;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
 @keyframes move {
   0% {
     offset-distance: 0%;
