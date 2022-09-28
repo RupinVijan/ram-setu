@@ -1,7 +1,8 @@
 @media screen and (min-width: 500px) {
   .App{
-    display: none;
-/*     justify-content: center;
-    background-color: #f8f8f8; */
+    display:flex;
+    justify-content: center;
+    background-color: #f8f8f8;
+
   }
 }
