@@ -95,7 +95,7 @@
 .pic-of-god {
   object-fit: fill;
   transform: translateY(-100px);
-  animation: fly 30s forwards ;
+  animation: fly 30s forwards;
   width: 9rem;
   height: 9rem;
 }
@@ -104,7 +104,7 @@
   0% {
     transform: translatey(0px);
   }
-  10% {
+  /* 10% {
     transform: translatey(-55px);
   }
   20% {
@@ -112,11 +112,11 @@
   }
   30% {
     transform: translatey(-165px);
-  }
-  40% {
-    transform: translatey(-220px);
-  }
+  } */
   50% {
+    transform: translatey(-275px);
+  }
+  /* 50% {
     transform: translatey(-275px);
   }
   60% {
@@ -130,7 +130,7 @@
   }
   90% {
     transform: translatey(-495px);
-  }
+  } */
   100% {
     transform: translatey(-550px);
   }
