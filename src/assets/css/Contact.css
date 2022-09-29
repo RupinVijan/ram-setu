@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Crimson+Text&family=Mukta:wght@300&family=Rubik&display=swap");
 .background {
-  background-image: url("../images/Login_Background.png");
+  /* background-image: url("../images/Login_Background.png"); */
   width: 100vw;
   max-width: 500px;
   height: 100vh;
@@ -11,7 +11,8 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-
+  background-color: transparent;
+ 
 }
 
 .animationClass {
@@ -22,6 +23,7 @@
   position: absolute;
   max-width: 500px;
   width: 120%;
+  top: -35%;
 }
 
 .targetAnimation {
@@ -48,7 +50,7 @@
   background-color: black;
   opacity: 55%;
   height: 5.5%;
-  top: 39%;
+  top: 13%;
   /* width: 60%; */
 }
 .noinput {
@@ -58,7 +60,7 @@
   font-size: 18px;
   background-color: black;
   opacity: 55%;
-  top: 50%;
+  top: 25%;
   height: 5.5%;
   /* width: 60%; */
 }
@@ -79,7 +81,7 @@
   font-weight: 500;
   color: white;
   position: absolute;
-  top: 60%;
+  top: 37%;
   height: 5%;
   width: 20%;
   background-image: linear-gradient(to right, #96f147cb, #77c21b);
@@ -90,6 +92,19 @@
   background-color: white;
   background-image: linear-gradient(to right, #96f147cb, #77c21b);
   color: white;
+}
+.hanuman {
+  z-index: 10;
+ 
+  
+  max-width: 500px;
+  position: absolute;
+  left:0;
+  
+  bottom:0;
+  width: 70%;
+  
+ /* right: 40%; */
 }
 /* .imag{
     

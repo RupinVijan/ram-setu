@@ -10,17 +10,21 @@
   position: fixed;
   align-items: center;
   justify-content: center;
-
+   padding: 0%;
+   
   overflow: hidden;
 }
 .mask {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 0;
   height: 100%;
   width: 100%;
-  backdrop-filter: blur(20px);
-  animation:blur 2s;
+  /* backdrop-filter: blur(20px);
+  animation:blur 2s; */
+  padding: 0%;
+  margin: 0%;
+ 
  
   
 
@@ -34,12 +38,12 @@
   left:0;
   
   bottom:0;
-  width: 85%;
+  width: 70%;
   
  /* right: 40%; */
 }
 
-@keyframes blur {
+/* @keyframes blur {
   0%{
     backdrop-filter: blur(0px); 
   }
@@ -47,4 +51,4 @@
     backdrop-filter: blur(20px); 
   }
   
-}
+} */

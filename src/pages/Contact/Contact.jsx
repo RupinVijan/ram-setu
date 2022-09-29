@@ -67,10 +67,15 @@ const Contact = () => {
       />
 
       <label className="labelNumber d-flex justify-content-center "></label>
-      {/* <button type="submit" className="button1" onClick={save}>
+      <button type="submit" className="button1" onClick={save}>
         OK
-      </button> */}
-      {trigger?(<Mask/>):(<button type="submit" className="button1" onClick={save}>Show Mask</button>)}
+      </button>
+      {/* {trigger?(<Mask/>):(<button type="submit" className="button1" onClick={save}>Show Mask</button>)} */}
+      <img
+        src={require("../../assets/images/hanuman.png")}
+        className="hanuman d-flex align-items-center"
+        alt="Hanuman img"
+      />
     </div>
   );
 };
