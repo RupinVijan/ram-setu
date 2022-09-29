@@ -59,23 +59,20 @@
 
 .stone {
   position: absolute;
-  width: 50px;
+  width: 100px;
   left: 45%;
   bottom: 40px;
-  bottom: 0;
+  bottom: 20px;
   z-index: 20;
 }
 
 .highlight {
   -webkit-filter: drop-shadow(10px 10px 10px white)
-  drop-shadow(-10px 10px 10px white)
-  drop-shadow(10px -10px 10px white)
-  drop-shadow(-10px -10px 10px white);
+    drop-shadow(-10px 10px 10px white) drop-shadow(10px -10px 10px white)
+    drop-shadow(-10px -10px 10px white);
 
-  filter: drop-shadow(10px 10px 10px white)
-  drop-shadow(-10px 10px 10px white)
-  drop-shadow(10px -10px 10px white)
-  drop-shadow(-10px -10px 10px white);
+  filter: drop-shadow(10px 10px 10px white) drop-shadow(-10px 10px 10px white)
+    drop-shadow(10px -10px 10px white) drop-shadow(-10px -10px 10px white);
 }
 
 .BackgroundVideoContainer {
@@ -85,6 +82,58 @@
   position: absolute;
   top: 0;
   left: 0;
+}
+
+.hanuman_pic {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.pic-of-god {
+  object-fit: fill;
+  transform: translateY(-100px);
+  animation: fly 30s forwards ;
+  width: 9rem;
+  height: 9rem;
+}
+
+@keyframes fly {
+  0% {
+    transform: translatey(0px);
+  }
+  10% {
+    transform: translatey(-55px);
+  }
+  20% {
+    transform: translatey(-110px);
+  }
+  30% {
+    transform: translatey(-165px);
+  }
+  40% {
+    transform: translatey(-220px);
+  }
+  50% {
+    transform: translatey(-275px);
+  }
+  60% {
+    transform: translatey(-330px);
+  }
+  70% {
+    transform: translatey(-385x);
+  }
+  80% {
+    transform: translatey(-440px);
+  }
+  90% {
+    transform: translatey(-495px);
+  }
+  100% {
+    transform: translatey(-550px);
+  }
 }
 
 @media screen and (max-width: 290px) {
@@ -103,9 +152,8 @@
     left: 0;
   }
 }
-@media screen and  (max-width: 500px)
-{
-  .imgContainer{
+@media screen and (max-width: 500px) {
+  .imgContainer {
     position: static;
   }
 }
