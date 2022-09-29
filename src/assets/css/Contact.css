@@ -20,10 +20,11 @@
 }
 
 .input-box {
-  position: absolute;
+  position: fixed;
   max-width: 740px;
   max-width: 500px;
   width: 120%;
+  height: 120%;
   transform: translateY(-25vh);
 
 }
@@ -48,24 +49,26 @@
 
 
 .nameinput {
-  position: absolute;
+  position: fixed;
   border-radius: 9px;
   color: #e6ab74;
   font-size: 18px;
   background-color: black;
   opacity: 55%;
+  width: 50%;
   height: 5.5%;
   top: 13%;
   /* width: 60%; */
 }
 .noinput {
-  position: absolute;
+  position: fixed;
   border-radius: 9px;
   color: #e6ab74;
   font-size: 18px;
   background-color: black;
   opacity: 55%;
   top: 25%;
+  width: 50%;
   height: 5.5%;
   /* width: 60%; */
 }
@@ -85,7 +88,7 @@
 .button1 {
   font-weight: 500;
   color: white;
-  position: absolute;
+  position: fixed;
   top: 37%;
   height: 5%;
   width: 20%;
@@ -102,12 +105,13 @@
   z-index: 10;
  
   
-  max-width: 500px;
-  position: absolute;
+  max-width: 300px;
+  position: fixed;
   left:0;
   
   bottom:0;
-  width: 70%;
+  height: 55%;
+  width: 20%;
   
  /* right: 40%; */
 }
@@ -139,10 +143,14 @@
   
   .nameinput {
   
-    width: 50%;
+    width: 19%;
   }
   .noinput {
   
-    width: 50%;
+    width: 19%;
   }
+  .button1{
+    width: 15%;
+  }
+ 
   }
