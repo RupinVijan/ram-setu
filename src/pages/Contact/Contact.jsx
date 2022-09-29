@@ -86,7 +86,7 @@ const Contact = () => {
       {/* <button type="submit" className="button1" onClick={save}>
         OK
       </button> */}
-      <button type="submit" className={"button1 "+(vidOn===true?"ramSita":"")} onClick={()=>{save();setVidOn(true);}}>Show Mask</button>
+      <button type="submit" className={"button1 "+(vidOn===true?"ramSita":"")} onClick={()=>{save();setVidOn(true);}}>Show</button>
       {vidOn===true?
        (
         <video
@@ -100,6 +100,11 @@ const Contact = () => {
       :(<></>)
 }
       {/* {trigger?(<Mask/>):(<button type="submit" className="button1" onClick={save}>Show Mask</button>)} */}
+      <img
+        src={require("../../assets/images/hanuman.png")}
+        className="hanuman d-flex align-items-center"
+        alt="Hanuman img"
+      />
     </div>
   );
 };
