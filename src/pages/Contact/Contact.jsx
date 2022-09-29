@@ -92,10 +92,11 @@ const Contact = () => {
         <video
        className="ramSita" id="myVideo"
        ref={ref}
-        src={ramSita}
+       src={ramSita}
         autoPlay
         
       />)
+      
       :(<></>)
 }
       {/* {trigger?(<Mask/>):(<button type="submit" className="button1" onClick={save}>Show Mask</button>)} */}
