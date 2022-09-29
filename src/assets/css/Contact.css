@@ -24,8 +24,11 @@
   width: 120%;
 }
 
-.targetAnimation {
-  
+.ramSita{
+  height: 100vh;
+  object-fit: fill;
+  width: 500px;
+  z-index: 500;
 }
 
 

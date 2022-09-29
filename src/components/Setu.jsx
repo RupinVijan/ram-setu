@@ -7,6 +7,7 @@ import stone from "../assets/images/stone.png";
 import background_video from "../assets/video/setuvid.mp4";
 import after_video from "../assets/video/afterSetu.mp4";
 import after_audio from "../assets/audio/afterSetuAudio.mp3";
+import { useNavigate } from "react-router-dom";
 
 const Setu = () => {
   const [Goalposition, setGoalPosition] = useState({ x: 0, y: 0 });
@@ -24,13 +25,16 @@ const Setu = () => {
   };
   const CheckCollide = (GoalX, GoalY, StoneX, StoneY) => {
     if (
-      (StoneX >= GoalX - 10 || StoneX <= GoalX + 10) &&
-      StoneY === GoalY &&
+      (StoneX >= GoalX - 20 || StoneX <= GoalX + 20) &&
+      // StoneY === GoalY &&
+      !(StoneY <= GoalY - 20 || StoneY >= GoalY + 20) && 
       StoneX !== 0
     ) {
       SetComplete(true);
     }
   };
+  const navigate = useNavigate();
+  
   useEffect(() => {
     if (Complete === false) {
       CheckCollide(
@@ -41,6 +45,8 @@ const Setu = () => {
       );
     }
   }, [Goalposition, Stoneposition, Complete]);
+
+  const [isDragging, setDragging] = useState(false);
   return (
     <div className="imgContainer">
       <video
@@ -51,8 +57,17 @@ const Setu = () => {
         src={Complete === false ? background_video : after_video}
       ></video>
       {Complete === true ? (
-        <audio autoPlay className="audio-element">
-          <source src={after_audio}></source>
+        <audio 
+        autoPlay
+        className="audio-element"
+        src={after_audio}
+        onEnded={()=>{navigate("/contact");
+        console.log("audio ended next paage rendered");  
+        }}
+           
+           >
+          
+          
         </audio>
       ) : null}
       {Complete === false ? (
@@ -61,9 +76,13 @@ const Setu = () => {
             if (Complete === false) {
               trackPos();
             }
+            setDragging(true);
+          }}
+          onStop={() => {
+            setDragging(false);
           }}
         >
-          <img ref={stony} src={stone} alt="stone" className="stone" />
+          <img ref={stony} src={stone} alt="stone" className={"stone" + (isDragging ? " " : " highlight")} />
         </Draggable>
       ) : null}
       {Complete === false ? (

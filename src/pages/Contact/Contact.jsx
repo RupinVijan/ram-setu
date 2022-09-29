@@ -1,11 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import "../../assets/css/Contact.css";
 import Mask from "../Mask/Mask";
+import { useNavigate } from "react-router-dom";
+import ramSita from "../../assets/video/Final_Render_2.mp4";
 const Contact = () => {
   const [name, setName] = useState(' ');
   const [number, setNumber] = useState(' ');
   const[trigger,setTrigger]=useState(false);
-
+  const[vidOn,setVidOn]=useState(false);
+  const ref = useRef(null);
   const save = () => {
     window.localStorage.setItem("name", name);
     window.localStorage.setItem("number", number);
@@ -24,12 +27,25 @@ const Contact = () => {
 
   };
   useEffect(() => {
+    if (ref.current) {
+      ref.current.play();
+    }
+  }, [ref]);
+
+  useEffect(() => {
     const data1 = window.localStorage.getItem("name");
     const data2 = window.localStorage.getItem("number");
 
     setName(data1);
     setNumber(data2);
   }, []);
+  const navigate = useNavigate();
+  function playVideo(e){
+   console.log(e.target);
+   e.target.style.display = "none";
+   const videoPlay = ref.current;
+   videoPlay.play();
+  }
   // useEffect( () =>{
 
   //     window.localStorage.setItem("name",name);
@@ -70,7 +86,19 @@ const Contact = () => {
       {/* <button type="submit" className="button1" onClick={save}>
         OK
       </button> */}
-      {trigger?(<Mask/>):(<button type="submit" className="button1" onClick={save}>Show Mask</button>)}
+      <button type="submit" className={"button1 "+(vidOn===true?"ramSita":"")} onClick={()=>{save();setVidOn(true);}}>Show Mask</button>
+      {vidOn===true?
+       (
+        <video
+       className="ramSita" id="myVideo"
+       ref={ref}
+        src={ramSita}
+        autoPlay
+        
+      />)
+      :(<></>)
+}
+      {/* {trigger?(<Mask/>):(<button type="submit" className="button1" onClick={save}>Show Mask</button>)} */}
     </div>
   );
 };

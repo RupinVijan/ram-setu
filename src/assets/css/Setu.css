@@ -66,6 +66,18 @@
   z-index: 20;
 }
 
+.highlight {
+  -webkit-filter: drop-shadow(10px 10px 10px white)
+  drop-shadow(-10px 10px 10px white)
+  drop-shadow(10px -10px 10px white)
+  drop-shadow(-10px -10px 10px white);
+
+  filter: drop-shadow(10px 10px 10px white)
+  drop-shadow(-10px 10px 10px white)
+  drop-shadow(10px -10px 10px white)
+  drop-shadow(-10px -10px 10px white);
+}
+
 .BackgroundVideoContainer {
   width: 100%;
   height: 100%;
