@@ -31,21 +31,16 @@ body {
 }
 
 .homeVideo{
-  width: 100vw;
   height: 100vh;
   object-fit: fill;
-  position: absolute;
-  top: 0;
-  left: 0;
+  width: 500px;
 }
 .initialImage{
   z-index: 10;
-  width: 100vw;
   height: 100vh;
   object-fit: fill;
   position: absolute;
-  top: 0;
-  left: 0;
+  width: 500px;
 }
 @keyframes move {
   0% {
@@ -97,9 +92,24 @@ body {
   }
 }
 
-@media screen and (min-width: 425px) {
-  .hanumanAnimated {
-    top: 30px;
-    left: 10%;
+@media screen and (max-width: 500px) {
+
+  .homeVideo{
+    width: 100vw;
+    height: 100vh;
+    object-fit: fill;
+    position: absolute;
+    top: 0;
+    left: 0;
   }
+  .initialImage{
+    z-index: 10;
+    width: 100vw;
+    height: 100vh;
+    object-fit: fill;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+ 
 }

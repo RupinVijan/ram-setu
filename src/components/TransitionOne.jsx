@@ -6,14 +6,17 @@ import "../assets/css/TransitionOne.css";
 import homeVideo from "../assets/video/FInal_Render.mp4";
 import homeVideo2 from "../assets/video/renderAfterPlay.mp4";
 import initialImage from "../assets/images/initial-image.png";
+import Setu from "./Setu";
+import { useNavigate } from "react-router-dom";
 const TransitionOne = () => {
   const ref = useRef(null);
+  
   const [vidIndex,setVidIndex]=useState(0)
   // const audio = new Audio(audIntro);
   // const start = () => {
   //   audio.play();
   // };
-
+const navigate = useNavigate();
   useEffect(() => {
     // audio.play();
   }, []);
@@ -31,7 +34,8 @@ const TransitionOne = () => {
   }
 
   return (
-    <div>
+    <div className="parentDiv">
+    
       <img className="initialImage" src={initialImage} alt="Front" onClick={(e)=>{
         playVideo(e);
       }}/>
@@ -50,7 +54,6 @@ const TransitionOne = () => {
         style={{ display: vidIndex === 1 ? "none" : "block" }}
         src={homeVideo}
         autoPlay
-        
         onEnded={() => setVidIndex((idx) => idx + 1)}
       />
       
@@ -60,6 +63,7 @@ const TransitionOne = () => {
           src={homeVideo2}
           ref={ref}
           autoPlay
+          onEnded={()=>{navigate("/setu")}}
         />
       }
  
