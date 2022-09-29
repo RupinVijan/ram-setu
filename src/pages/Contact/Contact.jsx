@@ -3,7 +3,6 @@ import "../../assets/css/Contact.css";
 import Mask from "../Mask/Mask";
 import { useNavigate } from "react-router-dom";
 import ramSita from "../../assets/video/Final_Render_2.mp4";
-
 const Contact = () => {
   const [name, setName] = useState(' ');
   const [number, setNumber] = useState(' ');
