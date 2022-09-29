@@ -6,52 +6,15 @@
   height: 100vh;
 }
 
-.india-top {
-  position: absolute;
-  width: 100%;
-  z-index: 2;
-}
-
-.water-top {
-  top: 0;
-  width: 100%;
-  position: absolute;
-  height: 100%;
-  object-fit: cover;
-  z-index: 1;
-}
-
-.setu-top {
-  position: absolute;
-  top: calc(100px + 20%);
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 40%;
-  height: 40%;
-  object-fit: contain;
-  z-index: 10;
-}
-
-.sri-lanka-top {
-  position: absolute;
-  bottom: 0;
-  margin: 0;
-  left: 0;
-  width: 35%;
-  height: 35%;
-  object-fit: cover;
-  z-index: 5;
-}
-
 .Goal {
   position: absolute;
-  width: 30px;
+  width: 50px;
   top: calc(100px + 40%);
   left: 50%;
   transform: translate(-50%, -50%);
-  height: 30px;
+  height: 50px;
   border-radius: 50%;
-  border: 2px rgb(255, 0, 0) dotted;
+  border: 5px rgb(255, 0, 0) dotted;
   z-index: 20;
 }
 
@@ -66,15 +29,12 @@
 
 .stone-fixed {
   position: absolute;
-  left: 47%;
-  top: 56%;
+  top: calc(100px + 40%);
+  left: 50%;
+  transform: translate(-50%, -50%);
   height: 20px;
   z-index: 10;
 }
-
-/* .imgContainer{
-      cursor: url(https://abs.twimg.com/emoji/v2/72x72/1f525.png) 36 36, auto;
-  } */
 
 @keyframes float {
   0% {
@@ -104,13 +64,19 @@
   bottom: 40px;
   position: absolute;
   bottom: 0;
-  z-index: 10;
+  z-index: 20;
+}
+
+.BackgroundVideoContainer {
+  width: 100vw;
+  height: 100vh;
+  object-fit: fill;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 @media screen and (max-width: 290px) {
-  .setu-top {
-    top: calc(100px + 15%);
-  }
   .Goal {
     top: calc(100px + 34%);
   }

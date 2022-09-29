@@ -1,13 +1,13 @@
 import React, { useEffect, useState, useRef } from "react";
 import Draggable from "react-draggable";
 import "../assets/css/Setu.css";
-import india_Top from "../assets/images/india-top-view.png";
-import Bridge from "../assets/images/setu-top-view.png";
-import Island from "../assets/images/lanka-top-view.png";
-import water from "../assets/images/water-top-view.png";
 import chat from "../assets/images/callout1.png";
 import chat2 from "../assets/images/callout2.png";
 import stone from "../assets/images/stone.png";
+import background_video from "../assets/video/setuvid.mp4";
+import after_video from "../assets/video/afterSetu.mp4";
+import after_audio from "../assets/audio/afterSetuAudio.mp3";
+
 const Setu = () => {
   const [Goalposition, setGoalPosition] = useState({ x: 0, y: 0 });
   const [Stoneposition, setStonePosition] = useState({ x: 0, y: 0 });
@@ -29,14 +29,9 @@ const Setu = () => {
       StoneX !== 0
     ) {
       SetComplete(true);
-      // console.log(
-      //   "GOOOOOOOOOAAAAAAAAAALLLLLLLLLLLLLL ⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽⚽"
-      // );
     }
   };
   useEffect(() => {
-    // console.log("Goal " + Goalposition.x + " " + Goalposition.y);
-    // console.log("Stone " + Stoneposition.x + " " + Stoneposition.y);
     if (Complete === false) {
       CheckCollide(
         Goalposition.x,
@@ -48,9 +43,18 @@ const Setu = () => {
   }, [Goalposition, Stoneposition, Complete]);
   return (
     <div className="imgContainer">
-      <img src={india_Top} alt="india-top" className="india-top" />
-      <img src={water} alt="water-top" className="water-top" />
-      <img src={Bridge} alt="setu-top" className="setu-top" />
+      <video
+        autoPlay
+        loop
+        muted
+        className="BackgroundVideoContainer"
+        src={Complete === false ? background_video : after_video}
+      ></video>
+      {Complete === true ? (
+        <audio autoPlay className="audio-element">
+          <source src={after_audio}></source>
+        </audio>
+      ) : null}
       {Complete === false ? (
         <Draggable
           onDrag={() => {
@@ -61,7 +65,6 @@ const Setu = () => {
         >
           <img ref={stony} src={stone} alt="stone" className="stone" />
         </Draggable>
-        
       ) : null}
       {Complete === false ? (
         <div className="Goal" ref={Goal}></div>
@@ -75,7 +78,6 @@ const Setu = () => {
           <img src={chat2} alt="chat" className="chat" />
         )}
       </div>
-      <img src={Island} alt="sri-lanka-top" className="sri-lanka-top" />
     </div>
   );
 };
