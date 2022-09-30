@@ -3,6 +3,7 @@
   object-fit: fill;
   width: 500px;
   height: 100%;
+  overflow: hidden;
 }
 
 .Goal {
@@ -90,49 +91,19 @@
   display: flex;
   width: 100%;
   justify-content: center;
+  transform: translateY(-30vh);
 }
 
 .pic-of-god {
   object-fit: fill;
-  transform: translateY(-100px);
-  animation: fly 30s forwards;
+  animation: fly 30s ease-in-out forwards;
   width: 9rem;
   height: 9rem;
 }
 
 @keyframes fly {
-  0% {
-    transform: translatey(0px);
-  }
-  /* 10% {
-    transform: translatey(-55px);
-  }
-  20% {
-    transform: translatey(-110px);
-  }
-  30% {
-    transform: translatey(-165px);
-  } */
-  50% {
-    transform: translatey(-275px);
-  }
-  /* 50% {
-    transform: translatey(-275px);
-  }
-  60% {
-    transform: translatey(-330px);
-  }
-  70% {
-    transform: translatey(-385x);
-  }
-  80% {
-    transform: translatey(-440px);
-  }
-  90% {
-    transform: translatey(-495px);
-  } */
   100% {
-    transform: translatey(-550px);
+    transform: scale(1.5, 1.5);
   }
 }
 
