@@ -1,19 +1,22 @@
 import React, { useEffect, useState, useRef } from "react";
 import "../../assets/css/Contact.css";
-import Mask from "../Mask/Mask";
-import { useNavigate } from "react-router-dom";
 import ramSita from "../../assets/video/Final_Render_2.mp4";
 const Contact = () => {
   const [name, setName] = useState(' ');
   const [number, setNumber] = useState(' ');
-  const[trigger,setTrigger]=useState(false);
+  
   const[vidOn,setVidOn]=useState(false);
   const ref = useRef(null);
+  const shareData = {
+    title: 'Ram Setu',
+    text: 'Lose will to live!',
+    url: 'https://satyug-101.netlify.app/'
+  }
   const save = () => {
     window.localStorage.setItem("name", name);
     window.localStorage.setItem("number", number);
     console.log("item saved", name, number);
-    setTrigger(true);
+    
 
     // let blockDiv = document.querySelector('.targetAnimation'); 
     // blockDiv.classList.add('animationClass');
@@ -39,7 +42,7 @@ const Contact = () => {
     setName(data1);
     setNumber(data2);
   }, []);
-  const navigate = useNavigate();
+  
 
   function playVideo(e){
  
@@ -87,6 +90,12 @@ const Contact = () => {
         OK
       </button> */}
       <button type="submit" className={"button1 "+(vidOn===true?"ramSita":"")} onClick={()=>{save();setVidOn(true);playVideo();}}>Show</button>
+      <button type="share" className={"shareButton"+(vidOn===true?"ramSita":"")} onClick={()=>navigator.share(shareData)}>
+        <svg 
+      xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-share-fill" viewBox="0 0 16 16">
+  <path d="M11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5z"/>
+</svg>
+</button>
       {vidOn===true?
        (
         <video

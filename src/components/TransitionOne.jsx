@@ -6,7 +6,7 @@ import "../assets/css/TransitionOne.css";
 import homeVideo from "../assets/video/FInal_Render.mp4";
 import homeVideo2 from "../assets/video/renderAfterPlay.mp4";
 import initialImage from "../assets/images/initial-image.png";
-import Setu from "./Setu";
+
 import { useNavigate } from "react-router-dom";
 const TransitionOne = () => {
   const ref = useRef(null);

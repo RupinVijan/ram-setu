@@ -100,6 +100,18 @@
   background-color: white;
   background-image: linear-gradient(to right, #96f147cb, #77c21b);
   color: white;
+  
+}
+.shareButton{
+  z-index: 20;
+  font-weight: 500;
+  color: white;
+  position: fixed;
+  top: 47%;
+  
+  background-image: linear-gradient(to right, #96f147cb, #77c21b);
+  opacity: 85%;
+  border-radius: 10px;
 }
 .hanuman {
   z-index: 10;
