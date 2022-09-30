@@ -7,6 +7,7 @@ import background_video from "../assets/video/setuvid.mp4";
 import after_video from "../assets/video/afterSetu.mp4";
 import after_audio from "../assets/audio/afterSetuAudio.mp3";
 import pic from "../assets/images/hanuman.png";
+import full_Setu_pic from '../assets/images/setu_full_pic.jpg';
 import { useNavigate } from "react-router-dom";
 
 const Setu = () => {
@@ -56,6 +57,7 @@ const Setu = () => {
         className="BackgroundVideoContainer"
         src={Complete === false ? background_video : after_video}
       ></video>
+      <img src={full_Setu_pic} className="BackgroundVideoContainer full_pic"  alt="full pic" />
       {Complete === true ? (
         <audio
           autoPlay
