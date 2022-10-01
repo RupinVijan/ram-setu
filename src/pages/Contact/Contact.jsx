@@ -18,6 +18,9 @@ const Contact = () => {
   };
   
   const save = async () => {
+
+    audio.pause();
+
     window.localStorage.setItem("name", name);
     window.localStorage.setItem("number", number);
     console.log("item saved", name, number);
@@ -90,7 +93,7 @@ const Contact = () => {
         type="submit"
         className={"closeIcon"}
         onClick={() => {
-          
+          audio.pause();
           setVidOn(true);
           
         }}
