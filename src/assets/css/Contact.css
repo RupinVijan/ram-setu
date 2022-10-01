@@ -28,7 +28,30 @@
   transform: translateY(-25vh);
 
 }
-
+.closeIcon{
+  z-index: 800;
+  color: #faa849;
+  
+  transform: translateY(-40vh) translateX(105px);
+  cursor: pointer;
+  font-weight: 500;
+  color: white;
+  position: fixed;
+  
+  background-image: linear-gradient(to right, #96f147cb, #77c21b);
+  opacity: 85%;
+  border-radius: 10px;
+}
+.iconButton{
+  transform: translateY(-40vh) translateX(105px);
+  background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
 .ramSita{
   height: 100vh;
   object-fit: fill;
@@ -72,19 +95,7 @@
   height: 5.5%;
   /* width: 60%; */
 }
-.labelName {
-  z-index: 8;
-  transform: translatey(-12px);
-  font-family: "Crimson Text", serif;
-  font-size: 1.5rem;
-}
-.labelNumber {
-  z-index: 8;
-  transform: translatey(-94px);
 
-  font-family: "Crimson Text", serif;
-  font-size: 1.5rem;
-}
 .button1 {
   font-weight: 500;
   color: white;
@@ -103,7 +114,9 @@
   
 }
 .shareButton{
-  z-index: 20;
+  display: flex;
+ 
+  z-index: 600;
   font-weight: 500;
   color: white;
   position: fixed;
@@ -112,6 +125,11 @@
   background-image: linear-gradient(to right, #96f147cb, #77c21b);
   opacity: 85%;
   border-radius: 10px;
+}
+.warp{
+  background-color: black;
+  z-index: 2000;
+  width: 100%;
 }
 .hanuman {
   z-index: 10;
@@ -166,3 +184,18 @@
   }
  
   }
+  @media screen and (min-width: 1700px) {
+  
+    .nameinput {
+    
+      width: 10%;
+    }
+    .noinput {
+    
+      width: 10%;
+    }
+    .button1{
+      width: 10%;
+    }
+   
+    }

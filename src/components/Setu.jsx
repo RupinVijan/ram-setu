@@ -52,6 +52,7 @@ const Setu = () => {
     <div className="imgContainer">
       <video
         autoPlay
+        playsInline
         loop
         muted
         className="BackgroundVideoContainer"

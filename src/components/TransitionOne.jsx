@@ -3,7 +3,7 @@ import "../assets/css/TransitionOne.css";
 // import image from "../assets/images/image.png";
 // import hanuman from "../assets/images/hanuman.png";
 // import audIntro from "../assets/audio/audIntro.mp3";
-import homeVideo from "../assets/video/FInal_Render.mp4";
+import homeVideo from "../assets/video/intro.mp4";
 import homeVideo2 from "../assets/video/renderAfterPlay.mp4";
 import initialImage from "../assets/images/initial-image.png";
 
@@ -50,6 +50,7 @@ const navigate = useNavigate();
 
        <video
        className="homeVideo" id="myVideo"
+       playsInline
        ref={ref}
         style={{ display: vidIndex === 1 ? "none" : "block" }}
         src={homeVideo}
@@ -60,6 +61,7 @@ const navigate = useNavigate();
       {vidIndex===0?"":
         <video
         className="homeVideo" id="myVideo"
+        playsInline
           src={homeVideo2}
           ref={ref}
           autoPlay
