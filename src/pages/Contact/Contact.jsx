@@ -8,9 +8,11 @@ const Contact = () => {
   const [vidOn, setVidOn] = useState(false);
   const [hideModal,setHideModal]=useState(false)
 
-  const audio = new Audio(anyAudio);
+
 
   const ref = useRef(null);
+  const audioRef = useRef();
+
   const shareData = {
     title: "Satyug",
     text: "Shri Ram ko aapki sahayata chaiye! jaldi neeche diye gaye link ko dabaye and Sita Maa ko bachaye !",
@@ -19,11 +21,12 @@ const Contact = () => {
   
   const save = async () => {
 
-    audio.pause();
-
     window.localStorage.setItem("name", name);
     window.localStorage.setItem("number", number);
     console.log("item saved", name, number);
+
+       audioRef.current.pause() ;
+
 
     let headersList = {
       "Accept": "*/*",
@@ -54,12 +57,7 @@ const Contact = () => {
     // let buton = document.querySelector('.button1');
     // buton.classList.add('animationClass');
   };
-  useEffect(() => {
-    audio.play()
-    // if (ref.current) {
-    //   ref.current.play();
-    // }
-  }, []);
+
 
   useEffect(() => {
     const data1 = window.localStorage.getItem("name");
@@ -67,7 +65,10 @@ const Contact = () => {
 
     setName(data1);
     setNumber(data2);
-  }, []);
+
+    audioRef.current.play()
+
+  },[]);
 
   function playVideo(e) {
     const videoPlay = ref.current;
@@ -93,7 +94,7 @@ const Contact = () => {
         type="submit"
         className={"closeIcon"}
         onClick={() => {
-          audio.pause();
+                audioRef.current.pause() ;
           setVidOn(true);
           
         }}
@@ -120,6 +121,8 @@ const Contact = () => {
         }}
       />
 
+
+
       <label className="labelNumber d-flex justify-content-center "></label>
       
       <button
@@ -133,7 +136,10 @@ const Contact = () => {
       >
         Submit
       </button>
-
+      <audio
+        ref={audioRef}
+        src={anyAudio}
+      />
       
       {vidOn === true ? (
         <div className="warp d-flex justify-content-center align-items-center">
