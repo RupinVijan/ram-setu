@@ -60,14 +60,7 @@ const Setu = () => {
       ></video>
       <img src={full_Setu_pic} className="BackgroundVideoContainer full_pic"  alt="full pic" />
       {Complete === true ? (
-        <audio
-          autoPlay
-          className="audio-element"
-          src={after_audio}
-          onEnded={() => {
-            navigate("/contact");
-          }}
-        ></audio>
+         navigate("/contact")
       ) : null}
       {Complete === false ? (
         <Draggable

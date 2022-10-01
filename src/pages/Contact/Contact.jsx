@@ -1,22 +1,46 @@
 import React, { useEffect, useState, useRef } from "react";
 import "../../assets/css/Contact.css";
 import ramSita from "../../assets/video/Final_Render_2.mp4";
+import anyAudio from "../../assets/audio/afterSetuAudio.mp3"
 const Contact = () => {
   const [name, setName] = useState("");
   const [number, setNumber] = useState("");
   const [vidOn, setVidOn] = useState(false);
   const [hideModal,setHideModal]=useState(false)
+
+  const audio = new Audio(anyAudio);
+
   const ref = useRef(null);
   const shareData = {
-    title: "Ram Setu",
-    text: "Lose will to live!",
-    url: "https://satyug-101.netlify.app/",
+    title: "Satyug",
+    text: "Shri Ram ko aapki sahayata chaiye! jaldi neeche diye gaye link ko dabaye and Sita Maa ko bachaye !",
+    url: window.location.origin,
   };
   
-  const save = () => {
+  const save = async () => {
     window.localStorage.setItem("name", name);
     window.localStorage.setItem("number", number);
     console.log("item saved", name, number);
+
+    let headersList = {
+      "Accept": "*/*",
+      "Content-Type": "application/json"
+    }
+
+    let bodyContent = JSON.stringify({
+      "phone number": number,
+      "name ": name
+    });
+
+    let response = await fetch("https://sheetdb.io/api/v1/gy6yq8hpszonf", { 
+      method: "POST",
+      body: bodyContent,
+      headers: headersList
+    });
+
+    let data = await response.text();
+    console.log(data);
+
 
     // let blockDiv = document.querySelector('.targetAnimation');
     // blockDiv.classList.add('animationClass');
@@ -28,10 +52,11 @@ const Contact = () => {
     // buton.classList.add('animationClass');
   };
   useEffect(() => {
-    if (ref.current) {
-      ref.current.play();
-    }
-  }, [ref]);
+    audio.play()
+    // if (ref.current) {
+    //   ref.current.play();
+    // }
+  }, []);
 
   useEffect(() => {
     const data1 = window.localStorage.getItem("name");
@@ -72,7 +97,6 @@ const Contact = () => {
       >
         X
       </button>
-      
       <input
         type="text"
         className="nameinput "
