@@ -1,8 +1,23 @@
+@media screen and (max-width: 500px){
+  #myBGVideo {
+    display: none;
+  }
+}
+
+
 @media screen and (min-width: 500px) {
   .App{
     display:flex;
     justify-content: center;
-    background-color: #f8f8f8;
-
+    /* background:url("./assets/video/wave\ 4.gif"); */
   }
+
+  #myBGVideo {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+  }
+
 }
