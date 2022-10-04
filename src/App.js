@@ -5,6 +5,7 @@ import Setu from "./components/Setu";
 import Contact from "./pages/Contact/Contact";
 import Mask from "./pages/Mask/Mask";
 import Ram_Sita from "./pages/Ram_Sita/Ram_Sita";
+import aves from "./assets/video/Waves.mp4";
 
 import React, { useEffect, useState } from "react";
 function App() {
@@ -22,6 +23,9 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/ram-sita" element={<Ram_Sita />} />
       </Routes>
+      <video className="vid" autoPlay loop muted >
+      <source src={aves} type='video/mp4'/>
+    </video>
     </div>
   );
 }

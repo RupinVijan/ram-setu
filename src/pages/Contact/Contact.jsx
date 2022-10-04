@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import "../../assets/css/Contact.css";
 import ramSita from "../../assets/video/Final_Render_2.mp4";
 import anyAudio from "../../assets/audio/afterSetuAudio.mp3"
+
 const Contact = () => {
   const [name, setName] = useState("");
   const [number, setNumber] = useState("");
@@ -84,6 +85,9 @@ const Contact = () => {
   return (
     
     <div className="background d-flex justify-content-center">
+  
+    
+  
       <img
         src={require("../../assets/images/LableBox.png")}
         className="input-box targetAnimation"

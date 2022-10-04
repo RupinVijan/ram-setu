@@ -1,9 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Crimson+Text&family=Mukta:wght@300&family=Rubik&display=swap");
 .background {
-  /* background-image: url("../images/Login_Background.png"); */
+  background-image: url("../images/Login_Background.png");
   width: 100vw;
-  max-width: 500px;
+  /* max-width: 500px; */
   height: 100vh;
+  z-index: 0;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -14,6 +15,13 @@
   background-color: transparent;
  
 }
+/* .vid{
+  z-index: -1000;
+  object-fit: fill;
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  /* position: inherit; */
 
 .animationClass {
   animation: trans 2s ease-in forwards ;
