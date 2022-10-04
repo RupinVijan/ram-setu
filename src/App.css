@@ -1,13 +1,7 @@
-.vid{
-  z-index: -1000;
-  object-fit: fill;
-
-  height: 100vh;
-  width: 100vw;
-}
-.app{
-  height: 100vh;
-  width: 100vw;
+@media screen and (max-width: 500px){
+  #myBGVideo {
+    display: none;
+  }
 }
 
 
@@ -15,7 +9,18 @@
   .App{
     display:flex;
     justify-content: center;
-    background-color: #f8f8f8;
-
+    /* background:url("./assets/video/wave\ 4.gif"); */
   }
+
+  #myBGVideo {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    object-fit: fill;
+    filter: blur(5px);
+    min-width: 100%; 
+    min-height: 100%;
+  }
+
 }
