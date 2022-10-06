@@ -143,6 +143,11 @@ const Contact = () => {
       <audio
         ref={audioRef}
         src={anyAudio}
+        onEnded={()=>{
+          setVidOn(true);
+          playVideo();
+
+        }}
       />
       
       {vidOn === true ? (
