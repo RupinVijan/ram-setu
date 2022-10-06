@@ -180,7 +180,7 @@ const Contact = () => {
       )}
       
       <img
-        src={require("../../assets/images/hanuman.png")}
+        src={require("../../assets/video/anumanreal.gif")}
         className="hanuman d-flex align-items-center"
         alt="Hanuman img"
       />
