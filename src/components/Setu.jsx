@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import Draggable from "react-draggable";
 import "../assets/css/Setu.css";
-import chat from "../assets/images/callout1.png";
+import chat from "../assets/images/calll-1.png";
 import stone from "../assets/images/stone.png";
 import background_video from "../assets/video/setuvid.mp4";
 import after_video from "../assets/video/afterSetu.mp4";
