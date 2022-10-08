@@ -134,8 +134,6 @@ const Contact = () => {
         className={"button1"}
         onClick={() => {
           save();
-          setVidOn(true);
-          playVideo();
         }}
       >
         Submit
@@ -144,6 +142,7 @@ const Contact = () => {
         ref={audioRef}
         src={anyAudio}
         onEnded={()=>{
+          save();
           setVidOn(true);
           playVideo();
 
