@@ -13,6 +13,13 @@ const Contact = () => {
 
   const ref = useRef(null);
   const audioRef = useRef();
+  const buttonsubmit= useRef();
+
+  const handleClick = event => {
+    event.currentTarget.style.display = 'none';
+    buttonsubmit.current.style.display = 'none';
+    console.log('button clicked');
+  };
 
   const shareData = {
     title: "Satyug",
@@ -26,7 +33,7 @@ const Contact = () => {
     window.localStorage.setItem("number", number);
     console.log("item saved", name, number);
 
-       audioRef.current.pause() ;
+      
 
 
     let headersList = {
@@ -97,11 +104,7 @@ const Contact = () => {
       <button
         type="submit"
         className={"closeIcon"}
-        onClick={() => {
-                audioRef.current.pause() ;
-          setVidOn(true);
-          
-        }}
+        onClick={handleClick}
       >
         X
       </button>
@@ -131,6 +134,7 @@ const Contact = () => {
       
       <button
         type="submit"
+        ref={buttonsubmit}
         className={"button1"}
         onClick={() => {
           save();
