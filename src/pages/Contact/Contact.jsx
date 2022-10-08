@@ -19,6 +19,7 @@ const Contact = () => {
     event.currentTarget.style.display = 'none';
     buttonsubmit.current.style.display = 'none';
     console.log('button clicked');
+    save();
   };
 
   const shareData = {
