@@ -38,7 +38,7 @@ const Setu = () => {
   const navigate = useNavigate();
 
   if(Complete){
-    setTimeout(()=>{navigate("/contact")}, 100000)
+    setTimeout(()=>{navigate("/contact")}, 5000)
   }
 
   useEffect(() => {
@@ -96,13 +96,16 @@ const Setu = () => {
       </div>
       {Complete ? 
         <Fireworks
+        
         options={{ opacity: 0.5 }}
         style={{
           width: '100%',
           height: '100%',
           maxWidth:'500px',
           position:'fixed',
-          zIndex: 5
+          zIndex: 5,
+
+        
         }}
       />
        : null}
