@@ -1,13 +1,16 @@
 import React, { useEffect, useState, useRef } from "react";
 import "../../assets/css/Contact.css";
 import ramSita from "../../assets/video/Final_Render_2.mp4";
-import anyAudio from "../../assets/audio/afterSetuAudio.mp3"
+import anyAudio from "../../assets/audio/afterSetuAudio.mp3";
+import Confetti from 'react-confetti';
+
 
 const Contact = () => {
   const [name, setName] = useState("");
   const [number, setNumber] = useState("");
   const [vidOn, setVidOn] = useState(false);
-  const [hideModal,setHideModal]=useState(false)
+  const [hideModal,setHideModal]=useState(false);
+  const [btn,setbtn] = useState(false);
 
 
 
@@ -138,11 +141,18 @@ const Contact = () => {
         ref={buttonsubmit}
         className={"button1"}
         onClick={() => {
+          setbtn(!btn)
           save();
         }}
       >
         Submit
-      </button>
+      </button>{
+        btn && <Confetti 
+          width='1000vw'
+          height='1000vh'
+          tweenDuration={1000}
+        />
+      }
       <audio
         ref={audioRef}
         src={anyAudio}
