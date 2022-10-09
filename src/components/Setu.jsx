@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import Draggable from "react-draggable";
 import "../assets/css/Setu.css";
-import chat from "../assets/images/callout1.png";
+import chat from "../assets/images/calll-1.png";
 import stone from "../assets/images/stone.png";
 import background_video from "../assets/video/setuvid.mp4";
 import after_video from "../assets/video/afterSetu.mp4";
@@ -9,6 +9,7 @@ import after_audio from "../assets/audio/afterSetuAudio.mp3";
 import pic from "../assets/images/hanuman.png";
 import full_Setu_pic from '../assets/images/setu_full_pic.jpg';
 import { useNavigate } from "react-router-dom";
+import { Fireworks } from '@fireworks-js/react'
 
 const Setu = () => {
   const [Goalposition, setGoalPosition] = useState({ x: 0, y: 0 });
@@ -36,6 +37,10 @@ const Setu = () => {
   };
   const navigate = useNavigate();
 
+  if(Complete){
+    setTimeout(()=>{navigate("/contact")}, 5000)
+  }
+
   useEffect(() => {
     if (Complete === false) {
       CheckCollide(
@@ -59,9 +64,6 @@ const Setu = () => {
         src={Complete === false ? background_video : after_video}
       ></video>
       <img src={full_Setu_pic} className="BackgroundVideoContainer full_pic"  alt="full pic" />
-      {Complete === true ? (
-         navigate("/contact")
-      ) : null}
       {Complete === false ? (
         <Draggable
           onDrag={() => {
@@ -92,11 +94,21 @@ const Setu = () => {
         ) : // <img src={chat2} alt="chat" className="chat" />
         null}
       </div>
-      {Complete ? (
-        <div className="hanuman_pic">
-          <img src={pic} alt="Hanuman-ji" className="pic-of-god" />
-        </div>
-      ) : null}
+      {Complete ? 
+        <Fireworks
+        
+        options={{ opacity: 0.5 }}
+        style={{
+          width: '100%',
+          height: '100%',
+          maxWidth:'500px',
+          position:'fixed',
+          zIndex: 5,
+
+        
+        }}
+      />
+       : null}
     </div>
   );
 };

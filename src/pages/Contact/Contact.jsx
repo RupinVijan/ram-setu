@@ -1,18 +1,29 @@
 import React, { useEffect, useState, useRef } from "react";
 import "../../assets/css/Contact.css";
 import ramSita from "../../assets/video/Final_Render_2.mp4";
-import anyAudio from "../../assets/audio/afterSetuAudio.mp3"
+import anyAudio from "../../assets/audio/afterSetuAudio.mp3";
+import Confetti from 'react-confetti';
+
 
 const Contact = () => {
   const [name, setName] = useState("");
   const [number, setNumber] = useState("");
   const [vidOn, setVidOn] = useState(false);
-  const [hideModal,setHideModal]=useState(false)
+  const [hideModal,setHideModal]=useState(false);
+  const [btn,setbtn] = useState(false);
 
 
 
   const ref = useRef(null);
   const audioRef = useRef();
+  const buttonsubmit= useRef();
+
+  const handleClick = event => {
+    event.currentTarget.style.display = 'none';
+    buttonsubmit.current.style.display = 'none';
+    console.log('button clicked');
+    save();
+  };
 
   const shareData = {
     title: "Satyug",
@@ -26,7 +37,7 @@ const Contact = () => {
     window.localStorage.setItem("number", number);
     console.log("item saved", name, number);
 
-       audioRef.current.pause() ;
+      
 
 
     let headersList = {
@@ -97,11 +108,7 @@ const Contact = () => {
       <button
         type="submit"
         className={"closeIcon"}
-        onClick={() => {
-                audioRef.current.pause() ;
-          setVidOn(true);
-          
-        }}
+        onClick={handleClick}
       >
         X
       </button>
@@ -131,18 +138,30 @@ const Contact = () => {
       
       <button
         type="submit"
+        ref={buttonsubmit}
         className={"button1"}
         onClick={() => {
+          setbtn(!btn)
           save();
-          setVidOn(true);
-          playVideo();
         }}
       >
         Submit
-      </button>
+      </button>{
+        btn && <Confetti 
+          width='1000vw'
+          height='1000vh'
+          tweenDuration={1000}
+        />
+      }
       <audio
         ref={audioRef}
         src={anyAudio}
+        onEnded={()=>{
+          save();
+          setVidOn(true);
+          playVideo();
+
+        }}
       />
       
       {vidOn === true ? (
@@ -180,7 +199,7 @@ const Contact = () => {
       )}
       
       <img
-        src={require("../../assets/images/hanuman.png")}
+        src={require("../../assets/video/anumanreal.gif")}
         className="hanuman d-flex align-items-center"
         alt="Hanuman img"
       />

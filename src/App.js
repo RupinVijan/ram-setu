@@ -18,7 +18,7 @@ function App() {
     <div className="App">
     
     <video autoPlay muted loop id="myBGVideo">
-    <source src={Bg_Video} type="video/mp4"></source>
+    <source src={Bg_Video} type="video/mp4" ></source>
     </video>
 
       <Routes>
