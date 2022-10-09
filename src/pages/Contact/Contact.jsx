@@ -17,10 +17,15 @@ const Contact = () => {
   const ref = useRef(null);
   const audioRef = useRef();
   const buttonsubmit= useRef();
+  const modal = useRef();
+  const nameinput = useRef();
+  const noinput = useRef();
+  const cross = useRef();
 
   const handleClick = event => {
     event.currentTarget.style.display = 'none';
-    buttonsubmit.current.style.display = 'none';
+    
+   
     console.log('button clicked');
     save();
   };
@@ -36,6 +41,11 @@ const Contact = () => {
     window.localStorage.setItem("name", name);
     window.localStorage.setItem("number", number);
     console.log("item saved", name, number);
+    modal.current.style.display = 'none';
+    noinput.current.style.display = 'none';
+    nameinput.current.style.display = 'none';
+    buttonsubmit.current.style.display = 'none';
+    cross.current.style.display = 'none';
 
       
 
@@ -100,12 +110,14 @@ const Contact = () => {
     
   
       <img
+      ref={modal}
         src={require("../../assets/images/LableBox.png")}
         className="input-box targetAnimation"
         alt="LabelBox"
       />
       <label className="labelName d-flex targetAnimation"></label>
       <button
+      ref={cross}
         type="submit"
         className={"closeIcon"}
         onClick={handleClick}
@@ -114,6 +126,7 @@ const Contact = () => {
       </button>
       <input
         type="text"
+        ref={nameinput}
         className="nameinput "
         placeholder="Name"
         value={name}
@@ -124,6 +137,7 @@ const Contact = () => {
 
       <input
         type="text"
+        ref={noinput}
         className="noinput "
         placeholder="Phone number"
         value={number}
