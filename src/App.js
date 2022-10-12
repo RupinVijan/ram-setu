@@ -4,29 +4,32 @@ import { Routes, Route } from "react-router-dom";
 import Setu from "./components/Setu";
 import Contact from "./pages/Contact/Contact";
 import Mask from "./pages/Mask/Mask";
-import Ram_Sita from "./pages/Ram_Sita/Ram_Sita";
+import RamSita from "./pages/Ram_Sita/Ram_Sita";
 import Bg_Video from "./assets/video/Waves.mp4";
+import Satyug from "./pages/Satyug"
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 function App() {
-  const [trigger, setTrigger] = useState(false);
-  const handleTrigger = () => {
-    setTrigger(true);
-  };
+
 
   return (
     <div className="App">
     
-    <video autoPlay muted loop id="myBGVideo">
-    <source src={Bg_Video} type="video/mp4" ></source>
-    </video>
+    {
+      window.location.href.includes("ram-setu") ?
+        <video autoPlay muted loop id="myBGVideo">
+          <source src={Bg_Video} type="video/mp4" ></source>
+        </video> : null
+    }
+  
 
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/setu" element={<Setu />} />
-        <Route path="/mask" element={<Mask />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/ram-sita" element={<Ram_Sita />} />
+        <Route path="/" element={<Satyug />}/>
+        <Route path="/ram-setu/" element={<Home />} />
+        <Route path="/ram-setu/setu" element={<Setu />} />
+        <Route path="/ram-setu/mask" element={<Mask />} />
+        <Route path="/ram-setu/contact" element={<Contact />} />
+        <Route path="/ram-setu/ram-sita" element={<RamSita />} />
       </Routes>
      
     </div>
