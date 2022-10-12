@@ -116,14 +116,13 @@ const Contact = () => {
         alt="LabelBox"
       />
       <label className="labelName d-flex targetAnimation"></label>
-      <button
-      ref={cross}
+      {/* <button
         type="submit"
         className={"closeIcon"}
         onClick={handleClick}
       >
         X
-      </button>
+      </button> */}
       <input
         type="text"
         ref={nameinput}
