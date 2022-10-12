@@ -9,7 +9,6 @@ const Contact = () => {
   const [name, setName] = useState("");
   const [number, setNumber] = useState("");
   const [vidOn, setVidOn] = useState(false);
-  const [hideModal,setHideModal]=useState(false);
   const [btn,setbtn] = useState(false);
 
 
@@ -22,6 +21,7 @@ const Contact = () => {
   const noinput = useRef();
   const cross = useRef();
 
+<<<<<<< HEAD
   const handleClick = event => {
     event.currentTarget.style.display = 'none';
     
@@ -29,6 +29,8 @@ const Contact = () => {
     console.log('button clicked');
     save();
   };
+=======
+>>>>>>> 41aaff3b6cf9bb0bc0097a618eb76d128241d434
 
   const shareData = {
     title: "Satyug",

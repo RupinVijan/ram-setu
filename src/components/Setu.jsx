@@ -5,8 +5,6 @@ import chat from "../assets/images/calll-1.png";
 import stone from "../assets/images/stone.png";
 import background_video from "../assets/video/setuvid.mp4";
 import after_video from "../assets/video/afterSetu.mp4";
-import after_audio from "../assets/audio/afterSetuAudio.mp3";
-import pic from "../assets/images/hanuman.png";
 import full_Setu_pic from '../assets/images/setu_full_pic.jpg';
 import { useNavigate } from "react-router-dom";
 import { Fireworks } from '@fireworks-js/react'
