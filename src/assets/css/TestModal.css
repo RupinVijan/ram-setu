@@ -1,0 +1,178 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600");
+
+code {
+  background: #f4f6fc;
+  border-radius: 5px;
+  color: #2d4284;
+  font-family: monospace;
+  padding: 4px 8px;
+}
+
+h1 {
+  font-size: 30px;
+}
+
+.placeholder {
+  background: #f4f6fc;
+  border-radius: 5px;
+  height: 15vh;
+  min-height: 100px;
+  margin-bottom: 30px;
+}
+
+.modal__backdrop {
+  background: rgba(0, 0, 0, 0.65);
+  bottom: 0;
+  left: 0;
+  overflow: auto;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 1;
+}
+
+.modal__container {
+  background: #fff;
+  border-radius: 20px;
+  max-width: 100%;
+  margin: 50px auto;
+  padding: 15px;
+  width: 45vw;
+  height: 50vh;
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+}
+
+.modal__title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+.modal__containerHeader {
+  height: 12vh;
+  background-color: #eeeeee;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  margin-top: -2vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45vw;
+  margin-left: -15px;
+  position: relative;
+}
+
+.video-upload-wrap {
+  margin: 0px;
+  font-family: "Open Sans";
+  padding: 0px;
+  border: 5px dashed #1fb264;
+  position: relative;
+  text-align: center;
+  height: 145px;
+  width: 60%;
+  margin-top: 40px;
+}
+
+.video-upload-wrap:hover {
+  background-color: #1fb264;
+  border: 4px dashed #fff;
+}
+
+.drag-text {
+  position: relative;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  z-index: 0;
+  padding: 10px 0;
+  margin-top: 30px;
+}
+.drag-text text3 {
+  font: 500 18px Rubik;
+  text-transform: uppercase;
+  color: #15824b;
+  vertical-align: middle;
+}
+.file-upload-video {
+  max-height: 200px;
+  max-width: 200px;
+  margin: auto;
+  padding: 20px;
+}
+
+.modal__containerButton {
+  display: none;
+}
+.modal__videoUpload {
+  text-align: center;
+}
+
+.modalButton {
+  background: #1fb264;
+  border: 0;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  padding: 10px 15px;
+  transition: transform 100ms ease-out;
+}
+
+.modal__clossButton {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.modalButton:hover {
+  background: #15824b;
+  transform: scale(1.1);
+}
+
+.btn-hover {
+  width: 200px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  margin: 20px;
+  height: 55px;
+  text-align: center;
+  border: none;
+  background-size: 300% 100%;
+
+  border-radius: 50px;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.btn-hover:hover {
+  background-position: 100% 0;
+
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.btn-hover:focus {
+  outline: none;
+}
+
+.btn-hover.color-5 {
+  background-image: linear-gradient(
+    to right,
+    #0ba360,
+    #3cba92,
+    #30dd8a,
+    #2bb673
+  );
+  box-shadow: 0 4px 15px 0 rgba(23, 168, 108, 0.75);
+}
+
+.modal__submitButton {
+  text-align: center;
+}
