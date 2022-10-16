@@ -8,7 +8,7 @@ import RamSita from "./pages/Ram_Sita/Ram_Sita";
 
 import Satyug from "./pages/Satyug";
 import Yog from "./pages/Yog/Yog";
-// import TestPage from "./pages/TestPage/TestPage"
+import TestPage from "./pages/TestPage/TestPage"
 import React from "react";
 // import TestModal from "./pages/TestModal/TestModal";
 function App() {
@@ -28,8 +28,8 @@ function App() {
         <Route path="/ram-setu/mask" element={<Mask />} />
         <Route path="/ram-setu/contact" element={<Contact />} />
         <Route path="/ram-setu/ram-sita" element={<RamSita />} />
-        <Route path="/Yog" element={<Yog />} />
-       {/* // <Route path="/TestPage" element={<TestPage/>} /> */}
+        <Route path="/Yog" element={<TestPage />} />
+        <Route path="/TestPage" element={<TestPage/>} />
       </Routes>
     </div>
   );
