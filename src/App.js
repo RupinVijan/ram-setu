@@ -8,7 +8,10 @@ import RamSita from "./pages/Ram_Sita/Ram_Sita";
 import Bg_Video from "./assets/video/Waves.mp4";
 import Satyug from "./pages/Satyug"
 import Yog from "./pages/Yog/Yog"
+import TestPage from "./pages/TestPage/TestPage"
 import React from "react";
+import Dhyana from "./pages/Satyug/dhyana/dhyana"
+
 function App() {
 
 
@@ -25,12 +28,14 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Satyug />}/>
-        <Route path="/ram-setu/" element={<Home />} />
-        <Route path="/ram-setu/setu" element={<Setu />} />
-        <Route path="/ram-setu/mask" element={<Mask />} />
-        <Route path="/ram-setu/contact" element={<Contact />} />
-        <Route path="/ram-setu/ram-sita" element={<RamSita />} />
-        <Route path="/Yog" element={<Yog/>} />
+        <Route path="/darshan/" element={<Home />} />
+        <Route path="/darshan/setu" element={<Setu />} />
+        <Route path="/darshan/mask" element={<Mask />} />
+        <Route path="/darshan/contact" element={<Contact />} />
+        <Route path="/darshan/ram-sita" element={<RamSita />} />
+        <Route path="/yog" element={<Yog/>} />
+        <Route path="/dhayana" element={<Dhyana />} />
+        <Route path="/testPage" element={<TestPage />} />
       </Routes>
      
     </div>

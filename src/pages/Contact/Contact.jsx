@@ -21,16 +21,6 @@ const Contact = () => {
   const noinput = useRef();
   const cross = useRef();
 
-<<<<<<< HEAD
-  const handleClick = event => {
-    event.currentTarget.style.display = 'none';
-    
-   
-    console.log('button clicked');
-    save();
-  };
-=======
->>>>>>> 41aaff3b6cf9bb0bc0097a618eb76d128241d434
 
   const shareData = {
     title: "Satyug",
