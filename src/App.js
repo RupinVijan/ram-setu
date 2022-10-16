@@ -8,7 +8,7 @@ import RamSita from "./pages/Ram_Sita/Ram_Sita";
 
 import Satyug from "./pages/Satyug";
 import Yog from "./pages/Yog/Yog";
-import TestPage from "./pages/TestPage/TestPage"
+// import TestPage from "./pages/TestPage/TestPage"
 import React from "react";
 // import TestModal from "./pages/TestModal/TestModal";
 function App() {
