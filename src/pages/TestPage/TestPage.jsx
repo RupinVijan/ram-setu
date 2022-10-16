@@ -8,15 +8,17 @@ const TestPage = () => {
     const playbackConst = 500;
     
     const handleScroll= ()=>{
-        v0.addEventListener('loadedmetadata', function() {
-            setHeight.style.height = Math.floor(v0.duration) * playbackConst + "px";
-        });
+        
         frameNumber = window.pageYOffset/playbackConst;
         v0.currentTime = frameNumber;
         window.requestAnimationFrame(handleScroll);
     }
     
-    
+    useEffect(() => {
+        v0.addEventListener('loadedmetadata', function() {
+            setHeight.style.height = Math.floor(v0.duration) * playbackConst + "px";
+        });
+      }, []);
    
     
     window.requestAnimationFrame(handleScroll);
