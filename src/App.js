@@ -29,7 +29,7 @@ function App() {
         <Route path="/ram-setu/contact" element={<Contact />} />
         <Route path="/ram-setu/ram-sita" element={<RamSita />} />
         <Route path="/Yog" element={<Yog />} />
-        <Route path="/TestPage" element={<TestPage/>} />
+       // <Route path="/TestPage" element={<TestPage/>} />
       </Routes>
     </div>
   );
