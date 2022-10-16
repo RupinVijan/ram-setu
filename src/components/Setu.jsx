@@ -3,15 +3,14 @@ import Draggable from "react-draggable";
 import "../assets/css/Setu.css";
 import chat from "../assets/images/calll-1.png";
 import stone from "../assets/images/stone.png";
-import background_video from "../assets/video/setuvid.mp4";
+
 import after_video from "../assets/video/afterSetu.mp4";
-import after_audio from "../assets/audio/afterSetuAudio.mp3";
-import pic from "../assets/images/hanuman.png";
 import full_Setu_pic from '../assets/images/setu_full_pic.jpg';
 import { useNavigate } from "react-router-dom";
 import { Fireworks } from '@fireworks-js/react'
 
 const Setu = () => {
+  const background_video = "https://res.cloudinary.com/dde6glimb/video/upload/v1665922517/setuvid_gtxhp9.mp4";
   const [Goalposition, setGoalPosition] = useState({ x: 0, y: 0 });
   const [Stoneposition, setStonePosition] = useState({ x: 0, y: 0 });
   const [Complete, SetComplete] = useState(false);
@@ -38,7 +37,7 @@ const Setu = () => {
   const navigate = useNavigate();
 
   if(Complete){
-    setTimeout(()=>{navigate("/contact")}, 5000)
+    setTimeout(()=>{navigate("/ram-setu/contact")}, 5000)
   }
 
   useEffect(() => {

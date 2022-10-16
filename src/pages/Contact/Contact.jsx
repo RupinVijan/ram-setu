@@ -9,7 +9,6 @@ const Contact = () => {
   const [name, setName] = useState("");
   const [number, setNumber] = useState("");
   const [vidOn, setVidOn] = useState(false);
-  const [hideModal,setHideModal]=useState(false);
   const [btn,setbtn] = useState(false);
 
 
@@ -17,13 +16,11 @@ const Contact = () => {
   const ref = useRef(null);
   const audioRef = useRef();
   const buttonsubmit= useRef();
+  const modal = useRef();
+  const nameinput = useRef();
+  const noinput = useRef();
+  const cross = useRef();
 
-  const handleClick = event => {
-    event.currentTarget.style.display = 'none';
-    buttonsubmit.current.style.display = 'none';
-    console.log('button clicked');
-    save();
-  };
 
   const shareData = {
     title: "Satyug",
@@ -36,6 +33,11 @@ const Contact = () => {
     window.localStorage.setItem("name", name);
     window.localStorage.setItem("number", number);
     console.log("item saved", name, number);
+    modal.current.style.display = 'none';
+    noinput.current.style.display = 'none';
+    nameinput.current.style.display = 'none';
+    buttonsubmit.current.style.display = 'none';
+    cross.current.style.display = 'none';
 
       
 
@@ -72,11 +74,8 @@ const Contact = () => {
 
 
   useEffect(() => {
-    const data1 = window.localStorage.getItem("name");
-    const data2 = window.localStorage.getItem("number");
+  
 
-    setName(data1);
-    setNumber(data2);
 
     audioRef.current.play()
 
@@ -100,20 +99,22 @@ const Contact = () => {
     
   
       <img
+      ref={modal}
         src={require("../../assets/images/LableBox.png")}
         className="input-box targetAnimation"
         alt="LabelBox"
       />
       <label className="labelName d-flex targetAnimation"></label>
-      <button
+      {/* <button
         type="submit"
         className={"closeIcon"}
         onClick={handleClick}
       >
         X
-      </button>
+      </button> */}
       <input
         type="text"
+        ref={nameinput}
         className="nameinput "
         placeholder="Name"
         value={name}
@@ -124,6 +125,7 @@ const Contact = () => {
 
       <input
         type="text"
+        ref={noinput}
         className="noinput "
         placeholder="Phone number"
         value={number}
