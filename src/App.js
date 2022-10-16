@@ -7,7 +7,7 @@ import Mask from "./pages/Mask/Mask";
 import RamSita from "./pages/Ram_Sita/Ram_Sita";
 import Bg_Video from "./assets/video/Waves.mp4";
 import Satyug from "./pages/Satyug"
-
+import Yog from "./pages/Yog/Yog"
 import React from "react";
 function App() {
 
@@ -30,6 +30,7 @@ function App() {
         <Route path="/ram-setu/mask" element={<Mask />} />
         <Route path="/ram-setu/contact" element={<Contact />} />
         <Route path="/ram-setu/ram-sita" element={<RamSita />} />
+        <Route path="/Yog" element={<Yog/>} />
       </Routes>
      
     </div>
