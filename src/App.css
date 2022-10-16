@@ -8,7 +8,7 @@
 @media screen and (min-width: 500px) {
   .App{
     display:flex;
-    /* justify-content: center; */
+    justify-content: center;
     /* background:url("./assets/video/wave\ 4.gif"); */
   }
 
