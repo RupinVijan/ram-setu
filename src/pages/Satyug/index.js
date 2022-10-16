@@ -1,14 +1,15 @@
 import classes from "./satyug.module.css"
-import v1 from "../../assets/video/satyug/1.mp4"
-import v2 from "../../assets/video/satyug/2.mp4"
-import v3 from "../../assets/video/satyug/3.mp4"
-import v4 from "../../assets/video/satyug/4.mp4"
-import v5 from "../../assets/video/satyug/5.mp4"
-import v6 from "../../assets/video/satyug/6.mp4"
+
 import React, {useState} from "react"
 
 
 const Satyug = () => {
+    const v1 = "https://res.cloudinary.com/dde6glimb/video/upload/v1665923848/1_jpxk5p.mp4";
+    const v2 = "https://res.cloudinary.com/dde6glimb/video/upload/v1665923964/2_purw66.mp4";
+    const v3 = "https://res.cloudinary.com/dde6glimb/video/upload/v1665923977/3_yhifq5.mp4";
+    const v4 = "https://res.cloudinary.com/dde6glimb/video/upload/v1665924099/4_w9mbna.mp4";
+    const v5 = "https://res.cloudinary.com/dde6glimb/video/upload/v1665924128/5_uk89rs.mp4";
+    const v6 = "https://res.cloudinary.com/dde6glimb/video/upload/v1665924190/6_p73bob.mp4";
 
     let alreadyScrolled = false
 

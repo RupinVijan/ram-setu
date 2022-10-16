@@ -1,37 +1,67 @@
 import "./TestPage.css"
 import {React, useState, useEffect, useRef} from "react"
+import { render } from 'react-dom'
+
 
 const TestPage = () => {
-    let v0=useRef();
-    let setHeight=useRef();
-    let  frameNumber=0;
-    const playbackConst = 500;
-    
-    const handleScroll= ()=>{
+    const [tempHeight,setTempHeight]= useState("0")
+    // useEffect(() => {
         
-        frameNumber = window.pageYOffset/playbackConst;
-        v0.currentTime = frameNumber;
-        window.requestAnimationFrame(handleScroll);
+        
+    //     var frameNumber = 0;
+    
+      
+
+    //     function scrollPlay() {
+    //         var frameNumber = window.pageYOffset/playbackConstant;
+    //         document.querySelector(".Oculus").currentTime = frameNumber;
+    //         window.requestAnimationFrame(scrollPlay);
+    //     }
+
+    //     window.requestAnimationFrame(scrollPlay);
+    // }, []);
+    const v1="https://res.cloudinary.com/dde6glimb/video/upload/v1665916476/Dhyana_Video_1_gybggg.mp4";
+    var vid = document.querySelector(".Oculus");
+    
+    var playbackConstant = 100;
+    var setHeight = document.querySelector("#Test");
+    
+    const metaDataCallback=()=>{
+        setTempHeight(Math.floor(vid.duration) * playbackConstant )
+        // setHeight.style.height = Math.floor(vid.duration) * playbackConstant + "px";
+        console.log(tempHeight)
     }
     
-    useEffect(() => {
-        v0.addEventListener('loadedmetadata', function() {
-            setHeight.style.height = Math.floor(v0.duration) * playbackConst + "px";
-        });
-      }, []);
-   
-    
-    window.requestAnimationFrame(handleScroll);
-   
-
     return(
-        <div>
-            <div id="set-height" ref={setHeight}></div>
-                <p className="vidTime" id="time"></p>
-                <video id="v0" ref={v0} onScroll={handleScroll}  tabIndex="0" autobuffer="autobuffer" preload="preload">
-                <source type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;" src="https://www.apple.com/media/us/mac-pro/2013/16C1b6b5-1d91-4fef-891e-ff2fc1c1bb58/videos/macpro_main_desktop.mp4"></source>
-                </video>
-        </div>
-    );
+        <div id="Test" style={{height:tempHeight}}>
+        
+        <video
+                        tabIndex="0"
+                        autobuffer="autobuffer"
+                        preload="preload"
+                        className="Oculus"
+                        onLoadedMetadata={metaDataCallback}
+                        muted
+                        autoPlay
+                        loop
+                    >
+                        <source type="video/mp4" src={v1} />
+                    </video>
+        {/* <video src={v1} tabIndex="0" autobuffer="autobuffer" preload="preload" onLoadedMetadata={ metaDataCallback } className="Oculus" muted autoPlay loop/> */}
+            {/* <video
+                // onLoadedMetaData={ metaDataCallback }
+                // tabIndex="0"
+                // autobuffer="autobuffer"
+                // preload="preload"
+                className="Oculus"
+
+            >
+                <source type="video/mp4" src="https://res.cloudinary.com/dde6glimb/video/upload/v1665916476/Dhyana_Video_1_gybggg.mp4"/>
+            </video> */}
+        
+        
+    </div>
+)
+    
 }
 export default TestPage

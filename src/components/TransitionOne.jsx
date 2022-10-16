@@ -3,12 +3,13 @@ import "../assets/css/TransitionOne.css";
 // import image from "../assets/images/image.png";
 // import hanuman from "../assets/images/hanuman.png";
 // import audIntro from "../assets/audio/audIntro.mp3";
-import homeVideo from "../assets/video/intro.mp4";
-import homeVideo2 from "../assets/video/renderAfterPlay.mp4";
+
 import initialImage from "../assets/images/initial-image.png";
 
 import { useNavigate } from "react-router-dom";
 const TransitionOne = () => {
+  const homeVideo = "https://res.cloudinary.com/dde6glimb/video/upload/v1665922516/intro_gupbp5.mp4";
+const homeVideo2 = "https://res.cloudinary.com/dde6glimb/video/upload/v1665922512/renderAfterPlay_zb6lxg.mp4";
   const ref = useRef(null);
   
   const [vidIndex,setVidIndex]=useState(0)
@@ -65,7 +66,7 @@ const navigate = useNavigate();
           src={homeVideo2}
           ref={ref}
           autoPlay
-          onEnded={()=>{navigate("/setu")}}
+          onEnded={()=>{navigate("/ram-setu/setu")}}
         />
       }
  

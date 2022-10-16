@@ -1,17 +1,18 @@
 import classes from "./dhyana.module.css"
-import v1 from "../../../assets/video/satyug/dhyana/1.mp4"
-import v2 from "../../../assets/video/satyug/dhyana/2.mp4"
-import v3 from "../../../assets/video/satyug/dhyana/3.mp4"
-import v4 from "../../../assets/video/satyug/dhyana/4.mp4"
-import v5 from "../../../assets/video/satyug/dhyana/5.mp4"
-import v6 from "../../../assets/video/satyug/dhyana/6.mp4"
-import v7 from "../../../assets/video/satyug/dhyana/7.mp4"
-import v8 from "../../../assets/video/satyug/dhyana/8.mp4"
+
 
 import React, {useState} from "react"
 
 
 const Dhyana = () => {
+    const v1 = "https://res.cloudinary.com/dde6glimb/video/upload/v1665925153/1_2_sjoqmd.mp4"
+const v2 = "https://res.cloudinary.com/dde6glimb/video/upload/v1665925164/2_2_aa7pb2.mp4"
+const v3 = "https://res.cloudinary.com/dde6glimb/video/upload/v1665925178/3_2_vcxmyc.mp4"
+const v4 = "https://res.cloudinary.com/dde6glimb/video/upload/v1665925192/4_1_oq0wwy.mp4"
+const v5 = "https://res.cloudinary.com/dde6glimb/video/upload/v1665925416/5_1_k7ljnn.mp4"
+const v6 = "https://res.cloudinary.com/dde6glimb/video/upload/v1665925428/6_1_e7inia.mp4"
+const v7 = "https://res.cloudinary.com/dde6glimb/video/upload/v1665925441/7_vagw0l.mp4"
+const v8 = "https://res.cloudinary.com/dde6glimb/video/upload/v1665925457/8_l6awql.mp4"
 
     let alreadyScrolled = false
 

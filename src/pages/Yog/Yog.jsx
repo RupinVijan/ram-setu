@@ -1,12 +1,13 @@
 import classes from "./Yog.module.css"
-import v1 from "../../assets/video/satyug/T1.mp4"
-import v2 from "../../assets/video/satyug/T2.mp4"
-import v3 from "../../assets/video/satyug/T3.mp4"
+
 
 import React, {useState} from "react"
 
 
 const Yog = () => {
+    const v1 = "https://res.cloudinary.com/dde6glimb/video/upload/v1665924712/1_1_di76xj.mp4";
+const v2 = "https://res.cloudinary.com/dde6glimb/video/upload/v1665924729/2_1_ancwjy.mp4";
+const v3 ="https://res.cloudinary.com/dde6glimb/video/upload/v1665924742/3_1_wpt0jo.mp4";
 
     let alreadyScrolled = false
 
