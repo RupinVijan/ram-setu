@@ -113,7 +113,7 @@ const Dhyana = () => {
 
     return (
         <div className={classes.container} >
-            <video src={v} className={classes.vidStyles} autoPlay muted loop/>
+            <video src={v} className={classes.vidStyles} autoPlay muted/>
         </div>
     )
 }

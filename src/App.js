@@ -10,6 +10,8 @@ import Satyug from "./pages/Satyug";
 import Yog from "./pages/Yog/Yog";
 import TestPage from "./pages/TestPage/TestPage"
 import React from "react";
+import Dhyana from "./pages/Satyug/dhyana/dhyana";
+
 // import TestModal from "./pages/TestModal/TestModal";
 function App() {
   const Bg_Video = "https://res.cloudinary.com/dde6glimb/video/upload/v1665922766/Waves_vsucxi.mp4";
@@ -28,8 +30,9 @@ function App() {
         <Route path="/ram-setu/mask" element={<Mask />} />
         <Route path="/ram-setu/contact" element={<Contact />} />
         <Route path="/ram-setu/ram-sita" element={<RamSita />} />
-        <Route path="/Yog" element={<TestPage />} />
+        <Route path="/Yog" element={<Yog />} />
         <Route path="/TestPage" element={<TestPage/>} />
+        <Route path="/Dhyana" element={<Dhyana/>} />
       </Routes>
     </div>
   );
