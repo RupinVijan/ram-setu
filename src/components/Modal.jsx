@@ -2,17 +2,26 @@ import React, { useEffect, useState } from "react";
 import "../assets/css/TestModal.css";
 
 const Modal = ({ onRequestClose }) => {
-  const [media, setMedia] = useState('');
-  const [Get, SetGet] = useState(false);
-  const handleChangeMedia =(e)=>{
+  const [media, setMedia] = useState("");
+  const [loaded, setLoaded] = useState(false);
+  const [walletConnected, setWalletConnected] = useState(false);
+
+  const handleChangeMedia = (e) => {
     // console.log(e.target.files[0].name)
     setMedia(e.target.files[0]);
-  }
+    setLoaded(true);
+    console.log(media);
+  };
 
-  const handleSubmit =async()=>{
-    // console.log(media);
+  const handleSubmitWallet = () => {
+    console.log("Hello world");
+    setWalletConnected(true);
+  };
+
+  const handleSubmit = async () => {
+    console.log(media);
     var formData = new FormData();
-      formData.append('public_id' , `${media.name}`);
+    formData.append("public_id", `${media.name}`);
     const url = "https://api.cloudinary.com/v1_1/dde6glimb/video/upload";
     let file = media;
     formData.append("file", file);
@@ -20,13 +29,12 @@ const Modal = ({ onRequestClose }) => {
 
     let response = await fetch(url, {
       method: "POST",
-      body: formData
-      
-    })
-    let data =  await response.json();
-    console.log(data)
+      body: formData,
+    });
+    let data = await response.json();
+    console.log(data);
     onRequestClose();
-  }
+  };
 
   useEffect(() => {
     function onKeyDown(event) {
@@ -55,22 +63,24 @@ const Modal = ({ onRequestClose }) => {
               type="button"
               onClick={onRequestClose}
             >
-              X
+         X
             </button>
           </div>
         </div>
         <div className="modal__videoUpload">
-          <label
-            className="video-upload-wrap"
-            id="video-upload-wrap"
-            for="input_151"
-          >
-            <div className="drag-text">
-              <text3>Upload Your Video</text3>
-              <text4> .mp4 or .mov only | 500MB MAX </text4>{" "}
-            </div>
-          </label>
-
+          {!loaded && (
+            <label
+              className="video-upload-wrap"
+              id="video-upload-wrap"
+              htmlFor="input_151"
+            >
+              <div className="drag-text">
+                <div className="modal__upload">Upload Your Video</div>
+                <div> .mp4 or .mov only | 500MB MAX </div>{" "}
+              </div>
+            </label>
+          )}
+          {loaded && <div className="modal__uploadDone">{media?.name}</div>}
           <input
             className="modal__containerButton"
             type="file"
@@ -80,13 +90,34 @@ const Modal = ({ onRequestClose }) => {
             data-file-minsize="0"
             data-file-limit="0"
             data-component="fileupload"
-            onInput="readURL(this)"
+            // onInput={readURL(this)}
             hidden=""
-            onChange={e=>handleChangeMedia(e)}
+            onChange={(e) => handleChangeMedia(e)}
           />
         </div>
+        {walletConnected && (
+          <div className="modal__submitButton">
+            <button className="btn-hover color-5" onClick={handleSubmit}>
+              SUBMIT
+            </button>
+          </div>
+        )}
+
+        {!walletConnected && (
+          <div className="modal__submitButton">
+            <button
+              className="btn-hover-disabled color-disabled"
+              onClick={handleSubmit}
+            >
+              SUBMIT
+            </button>
+          </div>
+        )}
+
         <div className="modal__submitButton">
-          <button className="btn-hover color-5" onClick={handleSubmit}>SUBMIT</button>
+          <button className="btn-hover color-5" onClick={handleSubmitWallet}>
+            Connect To Wallet
+          </button>
         </div>
       </div>
     </div>
