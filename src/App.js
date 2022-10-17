@@ -5,7 +5,6 @@ import Setu from "./components/Setu";
 import Contact from "./pages/Contact/Contact";
 import Mask from "./pages/Mask/Mask";
 import RamSita from "./pages/Ram_Sita/Ram_Sita";
-
 import Satyug from "./pages/Satyug";
 import Yog from "./pages/Yog/Yog";
 import TestPage from "./pages/TestPage/TestPage"
@@ -13,7 +12,9 @@ import React from "react";
 import Dhyana from "./pages/Satyug/dhyana/dhyana";
 import TestModal from "./pages/TestModal/TestModal";
 import DhyanaToken from "./pages/Satyug/dhyanaToken/DhyanaToken";
+import YogaToken from "./pages/YogaToken/YogaToken";
 
+import Navigator from "./pages/Navigator/Navigator";
 // import TestModal from "./pages/TestModal/TestModal";
 function App() {
   const Bg_Video = "https://res.cloudinary.com/dde6glimb/video/upload/v1665922766/Waves_vsucxi.mp4";
@@ -37,6 +38,11 @@ function App() {
         <Route path="/Dhyana" element={<Dhyana/>} />
         <Route path="/TestModal" element={<TestModal/>}/>
         <Route path="/DhyanaToken" element={<DhyanaToken/>}/>
+        <Route path="/yogaToken" element={<YogaToken/>} />
+        <Route path="/navigator" element={<Navigator/>} />
+        <Route path="/yog" element={<Yog />} />
+        <Route path="/testPage" element={<TestPage/>} />
+        <Route path="/dhyana" element={<Dhyana/>} />
       </Routes>
     </div>
   );

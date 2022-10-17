@@ -72,7 +72,7 @@
 // export default Satyug
 
 import classes from "./satyug.module.css"
-
+import { useNavigate } from "react-router-dom";
 
 import React, {useState} from "react"
 
@@ -90,7 +90,7 @@ const Dhyana = () => {
     const v = "https://res.cloudinary.com/dde6glimb/video/upload/v1665915468/Main_Video_1_gfaand.mp4"
 
     let alreadyScrolled = false
-
+    const navigate = useNavigate();
     const [vidIndex, setVidIndex] = useState(1);
     const [vidVar, setVidVar] = useState(v1) ;
 
@@ -113,7 +113,7 @@ const Dhyana = () => {
 
     return (
         <div className={classes.container} >
-            <video src={v} className={classes.vidStyles} autoPlay muted/>
+            <video src={v} className={classes.vidStyles} autoPlay muted onEnded={()=>navigate("/navigator")}/>
         </div>
     )
 }
