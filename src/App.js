@@ -12,7 +12,9 @@ import TestPage from "./pages/TestPage/TestPage";
 import React from "react";
 import Dhyana from "./pages/Satyug/dhyana/dhyana";
 import TestModal from "./pages/TestModal/TestModal";
-
+import Navigator from "./pages/Navigator/Navigator";
+import YogaToken from "./pages/YogaToken/YogaToken";
+import DhyanaToken from "./pages/Satyug/dhyanaToken/DhyanaToken"
 // import TestModal from "./pages/TestModal/TestModal";
 function App() {
   const Bg_Video =
@@ -32,10 +34,15 @@ function App() {
         <Route path="/ram-setu/mask" element={<Mask />} />
         <Route path="/ram-setu/contact" element={<Contact />} />
         <Route path="/ram-setu/ram-sita" element={<RamSita />} />
-        <Route path="/Yog" element={<Yog />} />
-        <Route path="/TestPage" element={<TestPage />} />
-        <Route path="/Dhyana" element={<Dhyana />} />
+        <Route path="/navigator" element={<Navigator/>} />
+        <Route path="/yog" element={<Yog />} />
+        <Route path="/testPage" element={<TestPage/>} />
+        <Route path="/dhyana" element={<Dhyana/>} />
+        <Route path="/yogaToken" element={<YogaToken/>} />
+        <Route path="/dhyanaToken" element={<DhyanaToken/>} />
+        
         <Route path="/test" element={<TestModal />} />
+
       </Routes>
     </div>
   );
