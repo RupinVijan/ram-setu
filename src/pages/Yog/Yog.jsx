@@ -2,7 +2,7 @@ import classes from "./Yog.module.css"
 
 
 import React, {useState} from "react"
-
+import { useNavigate } from "react-router-dom";
 
 const Yog = () => {
     // const v1 = "https://res.cloudinary.com/dde6glimb/video/upload/v1665924712/1_1_di76xj.mp4";
@@ -31,10 +31,10 @@ const Yog = () => {
     //         changeVid()
     //     }
     // }
-
+    const navigate = useNavigate();
     return (
         <div className={classes.container} >
-            <video src={v} className={classes.vidStyles} autoPlay muted/>
+            <video src={v} className={classes.vidStyles} autoPlay muted onEnded={()=>navigate("/yogaToken")}/>
         </div>
     )
 }
