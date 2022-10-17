@@ -13,6 +13,7 @@ import React from "react";
 import Dhyana from "./pages/Satyug/dhyana/dhyana";
 import YogaToken from "./pages/YogaToken/YogaToken";
 
+import Navigator from "./pages/Navigator/Navigator";
 // import TestModal from "./pages/TestModal/TestModal";
 function App() {
   const Bg_Video = "https://res.cloudinary.com/dde6glimb/video/upload/v1665922766/Waves_vsucxi.mp4";
@@ -31,10 +32,11 @@ function App() {
         <Route path="/ram-setu/mask" element={<Mask />} />
         <Route path="/ram-setu/contact" element={<Contact />} />
         <Route path="/ram-setu/ram-sita" element={<RamSita />} />
-        <Route path="/Yog" element={<Yog />} />
-        <Route path="/TestPage" element={<TestPage/>} />
-        <Route path="/Dhyana" element={<Dhyana/>} />
         <Route path="/yogaToken" element={<YogaToken/>} />
+        <Route path="/navigator" element={<Navigator/>} />
+        <Route path="/yog" element={<Yog />} />
+        <Route path="/testPage" element={<TestPage/>} />
+        <Route path="/dhyana" element={<Dhyana/>} />
       </Routes>
     </div>
   );
