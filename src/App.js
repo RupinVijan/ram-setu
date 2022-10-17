@@ -11,6 +11,8 @@ import Yog from "./pages/Yog/Yog";
 import TestPage from "./pages/TestPage/TestPage"
 import React from "react";
 import Dhyana from "./pages/Satyug/dhyana/dhyana";
+import TestModal from "./pages/TestModal/TestModal";
+import DhyanaToken from "./pages/Satyug/dhyanaToken/DhyanaToken";
 
 // import TestModal from "./pages/TestModal/TestModal";
 function App() {
@@ -33,6 +35,8 @@ function App() {
         <Route path="/Yog" element={<Yog />} />
         <Route path="/TestPage" element={<TestPage/>} />
         <Route path="/Dhyana" element={<Dhyana/>} />
+        <Route path="/TestModal" element={<TestModal/>}/>
+        <Route path="/DhyanaToken" element={<DhyanaToken/>}/>
       </Routes>
     </div>
   );

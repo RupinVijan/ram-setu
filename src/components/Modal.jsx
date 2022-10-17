@@ -3,7 +3,7 @@ import "../assets/css/TestModal.css";
 
 const Modal = ({ onRequestClose }) => {
   const [media, setMedia] = useState('');
-
+  const [Get, SetGet] = useState(false);
   const handleChangeMedia =(e)=>{
     // console.log(e.target.files[0].name)
     setMedia(e.target.files[0]);

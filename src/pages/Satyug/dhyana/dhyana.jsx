@@ -1,10 +1,9 @@
 import classes from "./dhyana.module.css"
-
-
 import React, {useState} from "react"
-
+import { useNavigate } from "react-router-dom";
 
 const Dhyana = () => {
+    const navigate = useNavigate();
     // const v1 = "https://res.cloudinary.com/dde6glimb/video/upload/v1665925153/1_2_sjoqmd.mp4"
     // const v2 = "https://res.cloudinary.com/dde6glimb/video/upload/v1665925164/2_2_aa7pb2.mp4"
     // const v3 = "https://res.cloudinary.com/dde6glimb/video/upload/v1665925178/3_2_vcxmyc.mp4"
@@ -43,7 +42,7 @@ const Dhyana = () => {
         //     <video src={vidVar} className={classes.vidStyles} autoPlay loop/>
         // </div>
         <div className={classes.container} >
-            <video src={v} className={classes.vidStyles} autoPlay muted/>
+            <video src={v} className={classes.vidStyles} onEnded={()=>navigate("/DhyanaToken")} autoPlay muted/>
         </div>
     )
 }
