@@ -18,7 +18,7 @@ const Modal = ({ onRequestClose }) => {
 
   const handleSubmitWallet = () => {
     connectWallet();
-    console.log(typeof currentAccount);
+    console.log(currentAccount);
     {currentAccount===""?setWalletConnected(false):setWalletConnected(true)}
     
   };
@@ -38,7 +38,7 @@ const Modal = ({ onRequestClose }) => {
     });
     let data = await response.json();
     console.log(data);
-    onRequestClose();
+    // onRequestClose();
   };
 
   useEffect(() => {
@@ -118,20 +118,20 @@ const Modal = ({ onRequestClose }) => {
             </button>
           </div>
         )}
-        {!walletConnected && (
+        {!walletConnected && 
           <div className="modal__submitButton">
           <button className="btn-hover color-5" onClick={handleSubmitWallet}>
             Connect To Wallet
           </button>
         </div>
-        )}
-        {walletConnected && (
+        }
+        {walletConnected && 
           <div className="modal__submitButton">
           <button className="btn-hover-disabled color-disabled" >
             Wallet ID: {currentAccount}
           </button>
         </div>
-        )}
+        }
         
         
       </div>

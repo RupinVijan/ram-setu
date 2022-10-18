@@ -14,7 +14,7 @@ export const WalletProvider = ({ children }) => {
 
             const accounts = await ethereum.request({method:'eth_requestAccounts',}) 
             setcurrentAccount(accounts[0]);
-            window.location.reload();
+            // window.location.reload();
         } catch (error) {
             console.log(error);
             throw new error('No ethereum object');
