@@ -6,7 +6,7 @@ const YogaToken = () => {
   return (
     <div>
         <Modal />
-        <img src={yogaImg} className="yogaTokenImg" />
+        <img src={yogaImg} className="yogaTokenImg" alt="yog" />
     </div>
   )
 }
