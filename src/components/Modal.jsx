@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
 import "../assets/css/TestModal.css";
+import { WalletContext } from "../context/WalletContext";
 
 const Modal = ({ onRequestClose }) => {
   const [media, setMedia] = useState("");
   const [loaded, setLoaded] = useState(false);
   const [walletConnected, setWalletConnected] = useState(false);
+
+  const { connectWallet, currentAccount } = React.useContext(WalletContext);
 
   const handleChangeMedia = (e) => {
     // console.log(e.target.files[0].name)
@@ -14,7 +17,8 @@ const Modal = ({ onRequestClose }) => {
   };
 
   const handleSubmitWallet = () => {
-    console.log("Hello world");
+    connectWallet();
+    console.log(currentAccount);
     setWalletConnected(true);
   };
 
