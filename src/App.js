@@ -8,7 +8,6 @@ import RamSita from "./pages/Ram_Sita/Ram_Sita";
 
 import Satyug from "./pages/Satyug";
 import Yog from "./pages/Yog/Yog";
-import TestPage from "./pages/TestPage/TestPage";
 import React from "react";
 import Dhyana from "./pages/Satyug/dhyana/dhyana";
 import TestModal from "./pages/TestModal/TestModal";
@@ -36,7 +35,6 @@ function App() {
         <Route path="/ram-setu/ram-sita" element={<RamSita />} />
         <Route path="/navigator" element={<Navigator/>} />
         <Route path="/yog" element={<Yog />} />
-        <Route path="/testPage" element={<TestPage/>} />
         <Route path="/dhyana" element={<Dhyana/>} />
         <Route path="/yogaToken" element={<YogaToken/>} />
         <Route path="/dhyanaToken" element={<DhyanaToken/>} />
