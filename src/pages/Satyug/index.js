@@ -113,7 +113,7 @@ const Dhyana = () => {
 
     return (
         <div className={classes.container} >
-            <video src={v} className={classes.vidStyles} autoPlay muted onEnded={()=>navigate("/navigator")}/>
+            <video src={v} className={classes.vidStyles} onClick={(e)=>{console.log(e.target.play())}} onEnded={()=>navigate("/navigator")}/>
         </div>
     )
 }

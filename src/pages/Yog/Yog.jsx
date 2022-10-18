@@ -34,7 +34,7 @@ const Yog = () => {
     const navigate = useNavigate();
     return (
         <div className={classes.container} >
-            <video src={v} className={classes.vidStyles} autoPlay muted onEnded={()=>navigate("/yogaToken")}/>
+            <video src={v} className={classes.vidStyles} onClick={(e)=>{console.log(e.target.play())}} onEnded={()=>navigate("/yogaToken")}/>
         </div>
     )
 }

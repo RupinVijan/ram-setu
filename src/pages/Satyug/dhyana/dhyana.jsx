@@ -42,7 +42,7 @@ const Dhyana = () => {
         //     <video src={vidVar} className={classes.vidStyles} autoPlay loop/>
         // </div>
         <div className={classes.container} >
-            <video src={v} className={classes.vidStyles} onEnded={()=>navigate("/DhyanaToken")} autoPlay muted/>
+            <video src={v} className={classes.vidStyles} onEnded={()=>navigate("/DhyanaToken")} onClick={(e)=>{console.log(e.target.play())}}/>
         </div>
     )
 }

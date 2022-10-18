@@ -65,7 +65,7 @@ const Modal = ({ onRequestClose }) => {
             <button
               className="modalButton"
               type="button"
-              onClick={onRequestClose}
+              onClick={()=>{window.location.href='/navigator'}}
             >
          X
             </button>
