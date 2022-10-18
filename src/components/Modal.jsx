@@ -81,13 +81,14 @@ const Modal = ({ onRequestClose }) => {
             >
               <div className="drag-text">
                 <div className="modal__upload">Upload Your Video</div>
-                <div> .mp4 or .mov only | 500MB MAX </div>{" "}
+                <div> .mp4 or .mov only | 50MB MAX </div>{" "}
               </div>
             </label>
           )}
           {loaded && <div className="modal__uploadDone">{media?.name}</div>}
           <input
-            className="modal__containerButton"
+            className="modal__containerButton video-upload-wrap"
+            
             type="file"
             id="input_151"
             multiple=""
@@ -127,7 +128,7 @@ const Modal = ({ onRequestClose }) => {
         }
         {walletConnected && 
           <div className="modal__submitButton">
-          <button className="btn-hover-disabled color-disabled" >
+          <button className=" color-disabled walletClass" >
             Wallet ID: {currentAccount}
           </button>
         </div>
