@@ -18,8 +18,9 @@ const Modal = ({ onRequestClose }) => {
 
   const handleSubmitWallet = () => {
     connectWallet();
-    console.log(currentAccount);
-    setWalletConnected(true);
+    console.log(typeof currentAccount);
+    {currentAccount===""?setWalletConnected(false):setWalletConnected(true)}
+    
   };
 
   const handleSubmit = async () => {
@@ -117,12 +118,22 @@ const Modal = ({ onRequestClose }) => {
             </button>
           </div>
         )}
-
-        <div className="modal__submitButton">
+        {!walletConnected && (
+          <div className="modal__submitButton">
           <button className="btn-hover color-5" onClick={handleSubmitWallet}>
             Connect To Wallet
           </button>
         </div>
+        )}
+        {walletConnected && (
+          <div className="modal__submitButton">
+          <button className="btn-hover-disabled color-disabled" >
+            Wallet ID: {currentAccount}
+          </button>
+        </div>
+        )}
+        
+        
       </div>
     </div>
   );
