@@ -19,8 +19,9 @@ const Modal = ({ onRequestClose }) => {
   const handleSubmitWallet = () => {
     connectWallet();
     console.log(currentAccount);
-    {currentAccount===""?setWalletConnected(false):setWalletConnected(true)}
-    
+    currentAccount === ""
+      ? setWalletConnected(false)
+      : setWalletConnected(true);
   };
 
   const handleSubmit = async () => {
@@ -38,6 +39,22 @@ const Modal = ({ onRequestClose }) => {
     });
     let data = await response.json();
     console.log(data);
+
+    const requestOptions = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        walletId: currentAccount,
+        videoLink: data.secure_url,
+      }),
+    };
+
+    fetch(
+      "https://docs.google.com/spreadsheets/d/15d6uBZRFD7MlXzca38huO5QdyMZfzPmgvAJCm9P_Ock/edit?usp=sharing",
+      requestOptions
+    )
+      .then((response) => response.json())
+      .then((data) => console.log(data));
     // onRequestClose();
   };
 
@@ -66,9 +83,11 @@ const Modal = ({ onRequestClose }) => {
             <button
               className="modalButton"
               type="button"
-              onClick={()=>{window.location.href='/navigator'}}
+              onClick={() => {
+                window.location.href = "/navigator";
+              }}
             >
-         X
+              X
             </button>
           </div>
         </div>
@@ -88,7 +107,6 @@ const Modal = ({ onRequestClose }) => {
           {loaded && <div className="modal__uploadDone">{media?.name}</div>}
           <input
             className="modal__containerButton video-upload-wrap"
-            
             type="file"
             id="input_151"
             multiple=""
@@ -119,22 +137,20 @@ const Modal = ({ onRequestClose }) => {
             </button>
           </div>
         )}
-        {!walletConnected && 
+        {!walletConnected && (
           <div className="modal__submitButton">
-          <button className="btn-hover color-5" onClick={handleSubmitWallet}>
-            Connect To Wallet
-          </button>
-        </div>
-        }
-        {walletConnected && 
+            <button className="btn-hover color-5" onClick={handleSubmitWallet}>
+              Connect To Wallet
+            </button>
+          </div>
+        )}
+        {walletConnected && (
           <div className="modal__submitButton">
-          <button className=" color-disabled walletClass" >
-            Wallet ID: {currentAccount}
-          </button>
-        </div>
-        }
-        
-        
+            <button className=" color-disabled walletClass">
+              Wallet ID: {currentAccount}
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );
