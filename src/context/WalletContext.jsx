@@ -22,9 +22,25 @@ export const WalletProvider = ({ children }) => {
     };
 
 
+    const disconnectWallet = async () => {
+        const accounts = await window.ethereum.request({
+            method: "wallet_requestPermissions",
+            params: [{
+                eth_accounts: {}
+            }]
+        }).then(() => ethereum.request({
+            method: 'eth_requestAccounts'
+        }))
+        
+        const account = accounts[0]
+        setcurrentAccount(account);
+        // window.location.reload();
+    };
+
+
 
     return(
-        <WalletContext.Provider value={{connectWallet, currentAccount }}>
+        <WalletContext.Provider value={{connectWallet, currentAccount, disconnectWallet }}>
             {children}
         </WalletContext.Provider>
     )

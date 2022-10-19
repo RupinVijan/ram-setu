@@ -7,7 +7,7 @@ const Modal = ({ onRequestClose }) => {
   const [loaded, setLoaded] = useState(false);
   const [walletConnected, setWalletConnected] = useState(false);
 
-  const { connectWallet, currentAccount } = React.useContext(WalletContext);
+  const { connectWallet, currentAccount, disconnectWallet } = React.useContext(WalletContext);
 
   const handleChangeMedia = (e) => {
     // console.log(e.target.files[0].name)
@@ -15,6 +15,11 @@ const Modal = ({ onRequestClose }) => {
     setLoaded(true);
     console.log(media);
   };
+
+  const handleDisconnectWallet = () =>{
+    disconnectWallet();
+    setWalletConnected(false);
+  }
 
   const handleSubmitWallet = () => {
     connectWallet();
@@ -148,6 +153,13 @@ const Modal = ({ onRequestClose }) => {
           <div className="modal__submitButton">
             <button className=" color-disabled walletClass">
               Wallet ID: {currentAccount}
+            </button>
+          </div>
+        )}
+        {walletConnected && (
+          <div className="modal__submitButton">
+            <button className="btn-hover color-5" onClick={handleDisconnectWallet}>
+              Disconnect Wallet
             </button>
           </div>
         )}
