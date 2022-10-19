@@ -1,14 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState , useRef } from "react";
 import "../assets/css/TestModal.css";
+import PropTypes from 'prop-types';
 import { WalletContext } from "../context/WalletContext";
-
-const Modal = ({ onRequestClose }) => {
+import uploadImg from '../assets/images/cloud-upload-regular-240.png';
+const Modal = ({ onRequestClose}) => {
   const [media, setMedia] = useState("");
   const [loaded, setLoaded] = useState(false);
   const [walletConnected, setWalletConnected] = useState(false);
 
   const { connectWallet, currentAccount } = React.useContext(WalletContext);
-
+  const wrapperRef = useRef(null);
+  const onDragEnter = () => wrapperRef.current.classList.add('dragover');
+  const onDragLeave = () => wrapperRef.current.classList.remove('dragover');
+  const onDrop = () => wrapperRef.current.classList.remove('dragover');
   const handleChangeMedia = (e) => {
     // console.log(e.target.files[0].name)
     setMedia(e.target.files[0]);
@@ -92,17 +96,20 @@ const Modal = ({ onRequestClose }) => {
           </div>
         </div>
         <div className="modal__videoUpload">
-          {!loaded && (
-            <label
-              className="video-upload-wrap"
-              id="video-upload-wrap"
-              htmlFor="input_151"
-            >
-              <div className="drag-text">
-                <div className="modal__upload">Upload Your Video</div>
-                <div> .mp4 or .mov only | 50MB MAX </div>{" "}
+            {!loaded && (
+              <div
+              ref={wrapperRef}
+              className="drop-file-input"
+              onDragEnter={onDragEnter}
+              onDragLeave={onDragLeave}
+              onDrop={onDrop}
+          >
+              <div className="drop-file-input__label">
+                  <img src={uploadImg} alt="Uploading IMG" />
+                  <p>Drag & Drop your files here</p>
               </div>
-            </label>
+              <input type="file" value="" onChange={(e) => handleChangeMedia(e)}/>
+          </div>
           )}
           {loaded && <div className="modal__uploadDone">{media?.name}</div>}
           <input
@@ -155,5 +162,7 @@ const Modal = ({ onRequestClose }) => {
     </div>
   );
 };
-
+Modal.propTypes = {
+  onFileChange: PropTypes.func
+}
 export default Modal;
