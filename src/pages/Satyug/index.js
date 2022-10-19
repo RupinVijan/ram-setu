@@ -1,5 +1,6 @@
 import classes from "./satyug.module.css";
 import { useNavigate } from "react-router-dom";
+import satyugLogo from '../../assets/images/satyugLogo.png'
 
 import React from "react";
 
@@ -11,7 +12,10 @@ const Dhyana = () => {
 
   return (
     <>
-      <div className="text-center" id="clickText" style={{position:'absolute',top:'50vh'}}>Click to Enter Satyug</div>
+      <div className="text-center clickToEnter" id="clickText" style={{position:'absolute',top:'40vh'}}>
+        Click to Enter
+        <img src={satyugLogo} alt='Satyug Logo'/>
+      </div>
       <div className={classes.container}>
         <video
           src={v}
