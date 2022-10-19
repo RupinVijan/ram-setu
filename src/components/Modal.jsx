@@ -1,16 +1,17 @@
-import React, { useEffect, useState , useRef } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import "../assets/css/TestModal.css";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 import { WalletContext } from "../context/WalletContext";
-import uploadImg from '../assets/images/cloud-upload-regular-240.png';
-import { v4 as uuidv4 } from 'uuid';
+import uploadImg from "../assets/images/cloud-upload-regular-240.png";
+import { v4 as uuidv4 } from "uuid";
 
-const Modal = ({ onRequestClose}) => {
+const Modal = ({ onRequestClose }) => {
   const [media, setMedia] = useState("");
   const [loaded, setLoaded] = useState(false);
   const [walletConnected, setWalletConnected] = useState(false);
 
-  const { connectWallet, currentAccount, disconnectWallet } = React.useContext(WalletContext);
+  const { connectWallet, currentAccount, disconnectWallet } =
+    React.useContext(WalletContext);
 
   const handleChangeMedia = (e) => {
     // console.log(e.target.files[0].name)
@@ -19,10 +20,10 @@ const Modal = ({ onRequestClose}) => {
     console.log(media);
   };
 
-  const handleDisconnectWallet = () =>{
+  const handleDisconnectWallet = () => {
     disconnectWallet();
     setWalletConnected(false);
-  }
+  };
 
   const handleSubmitWallet = () => {
     connectWallet();
@@ -31,6 +32,11 @@ const Modal = ({ onRequestClose}) => {
       ? setWalletConnected(false)
       : setWalletConnected(true);
   };
+
+  const wrapperRef = useRef(null);
+  const onDragEnter = () => wrapperRef.current.classList.add("dragover");
+  const onDragLeave = () => wrapperRef.current.classList.remove("dragover");
+  const onDrop = () => wrapperRef.current.classList.remove("dragover");
 
   const handleSubmit = async () => {
     console.log(media);
@@ -58,10 +64,7 @@ const Modal = ({ onRequestClose}) => {
       }),
     };
 
-    fetch(
-      "https://sheetdb.io/api/v1/mp8wxfuw1kf49",
-      requestOptions
-    )
+    fetch("https://sheetdb.io/api/v1/mp8wxfuw1kf49", requestOptions)
       .then((response) => response.json())
       .then((data) => console.log(data));
     // onRequestClose();
@@ -101,20 +104,24 @@ const Modal = ({ onRequestClose}) => {
           </div>
         </div>
         <div className="modal__videoUpload">
-            {!loaded && (
-              <div
+          {!loaded && (
+            <div
               ref={wrapperRef}
               className="drop-file-input"
               onDragEnter={onDragEnter}
               onDragLeave={onDragLeave}
               onDrop={onDrop}
-          >
+            >
               <div className="drop-file-input__label">
-                  <img src={uploadImg} alt="Uploading IMG" />
-                  <p>Drag & Drop your files here</p>
+                <img src={uploadImg} alt="Uploading IMG" />
+                <p>Drag & Drop your files here</p>
               </div>
-              <input type="file" value="" onChange={(e) => handleChangeMedia(e)}/>
-          </div>
+              <input
+                type="file"
+                value=""
+                onChange={(e) => handleChangeMedia(e)}
+              />
+            </div>
           )}
           {loaded && <div className="modal__uploadDone">{media?.name}</div>}
           <input
@@ -165,7 +172,10 @@ const Modal = ({ onRequestClose}) => {
         )}
         {walletConnected && (
           <div className="modal__submitButton">
-            <button className="btn-hover color-5" onClick={handleDisconnectWallet}>
+            <button
+              className="btn-hover color-5"
+              onClick={handleDisconnectWallet}
+            >
               Disconnect Wallet
             </button>
           </div>
@@ -175,6 +185,6 @@ const Modal = ({ onRequestClose}) => {
   );
 };
 Modal.propTypes = {
-  onFileChange: PropTypes.func
-}
+  onFileChange: PropTypes.func,
+};
 export default Modal;
