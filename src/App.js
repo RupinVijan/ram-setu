@@ -10,10 +10,12 @@ import Satyug from "./pages/Satyug";
 import Yog from "./pages/Yog/Yog";
 import React from "react";
 import Dhyana from "./pages/Satyug/dhyana/dhyana";
-import TestModal from "./pages/TestModal/TestModal";
+// import TestModal from "./pages/TestModal/TestModal";
 import Navigator from "./pages/Navigator/Navigator";
 import YogaToken from "./pages/YogaToken/YogaToken";
-import DhyanaToken from "./pages/Satyug/dhyanaToken/DhyanaToken"
+import DhyanaToken from "./pages/Satyug/dhyanaToken/DhyanaToken";
+import ComingSoon from "./pages/comingSoon and 404/ComingSoon";
+import NotFound from "./pages/comingSoon and 404/NotFound";
 // import TestModal from "./pages/TestModal/TestModal";
 function App() {
   const Bg_Video =
@@ -33,14 +35,14 @@ function App() {
         <Route path="/ram-setu/mask" element={<Mask />} />
         <Route path="/ram-setu/contact" element={<Contact />} />
         <Route path="/ram-setu/ram-sita" element={<RamSita />} />
-        <Route path="/navigator" element={<Navigator/>} />
+        <Route path="/navigator" element={<Navigator />} />
         <Route path="/yog" element={<Yog />} />
-        <Route path="/dhyana" element={<Dhyana/>} />
-        <Route path="/yogaToken" element={<YogaToken/>} />
-        <Route path="/dhyanaToken" element={<DhyanaToken/>} />
-        
-        <Route path="/test" element={<TestModal />} />
-
+        <Route path="/dhyana" element={<Dhyana />} />
+        <Route path="/yogaToken" element={<YogaToken />} />
+        {/* <Route path="/test" element={<TestModal />} /> */}
+        <Route path="/dhyanaToken" element={<DhyanaToken />} />
+        <Route path="/coming-soon" element={<ComingSoon />} />
+        <Route path="/*" element={<NotFound />} />
       </Routes>
     </div>
   );
