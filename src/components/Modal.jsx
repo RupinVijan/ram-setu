@@ -3,6 +3,8 @@ import "../assets/css/TestModal.css";
 import PropTypes from 'prop-types';
 import { WalletContext } from "../context/WalletContext";
 import uploadImg from '../assets/images/cloud-upload-regular-240.png';
+import { v4 as uuidv4 } from 'uuid';
+
 const Modal = ({ onRequestClose}) => {
   const [media, setMedia] = useState("");
   const [loaded, setLoaded] = useState(false);
@@ -30,8 +32,9 @@ const Modal = ({ onRequestClose}) => {
 
   const handleSubmit = async () => {
     console.log(media);
+    const mediaName = uuidv4();
     var formData = new FormData();
-    formData.append("public_id", `${media.name}`);
+    formData.append("public_id", `${mediaName}`);
     const url = "https://api.cloudinary.com/v1_1/dde6glimb/video/upload";
     let file = media;
     formData.append("file", file);
@@ -54,7 +57,7 @@ const Modal = ({ onRequestClose}) => {
     };
 
     fetch(
-      "https://docs.google.com/spreadsheets/d/15d6uBZRFD7MlXzca38huO5QdyMZfzPmgvAJCm9P_Ock/edit?usp=sharing",
+      "https://sheetdb.io/api/v1/mp8wxfuw1kf49",
       requestOptions
     )
       .then((response) => response.json())
