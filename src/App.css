@@ -9,7 +9,7 @@
   .App{
     display:flex;
     justify-content: center;
-    background-color: black;
+    /* background-color: black; */
     /* background:url("./assets/video/wave\ 4.gif"); */
   }
 
