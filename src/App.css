@@ -34,6 +34,8 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap');
 #clickText{
+  position: absolute;
+  top:40vh;
   font-family: 'SCRIPTIN';
   font-size: 65px;
   display: flex;
@@ -46,4 +48,11 @@
   height: 200px;
   width: 200px;
   margin-top: 0.5em;
+}
+@media screen and (max-width:600px) {
+  #clickText{
+    position: absolute;
+    width: 100%;
+    top:30vh;
+  }
 }
