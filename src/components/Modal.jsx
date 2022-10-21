@@ -143,6 +143,7 @@ const Modal = ({ onRequestClose,pathName }) => {
                   </div>
                   <input
                     type="file"
+                    accept="video/mp4"
                     value=""
                     onChange={(e) => handleChangeMedia(e)}
                   />
