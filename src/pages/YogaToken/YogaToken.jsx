@@ -5,14 +5,7 @@ import Modal from '../../components/Modal';
 import { useLocation } from 'react-router-dom';
 const YogaToken = () => {
   const location = useLocation();
-  function getWindowDimensions() {
-    const { innerWidth: width, innerHeight: height } = window;
-    return {
-      width,
-      height
-    };
-}
-let screenWidth = getWindowDimensions().width;
+  
 
   return (
     <div>
