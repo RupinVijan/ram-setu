@@ -32,13 +32,15 @@ h1 {
 }
 
 .modal__container {
-  background: #fff;
+  background: rgb(141 141 141 / 40%);
+  backdrop-filter: blur(5px);
+  color: #fff;
   border-radius: 20px;
   max-width: 100%;
   margin: 50px auto;
   padding: 15px;
   width: 45vw;
-  height: 50vh;
+  height: 65vh;
   box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
 }
 
@@ -50,7 +52,8 @@ h1 {
 
 .modal__containerHeader {
   height: 12vh;
-  background-color: #eeeeee;
+  background: rgb(141 141 141 / 40%);
+  backdrop-filter: blur(5px);
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   margin-top: -2vh;
@@ -63,6 +66,18 @@ h1 {
 }
 
 .video-upload-wrap {
+  margin: 0px;
+  font-family: "Open Sans";
+  padding: 0px;
+  border: 5px dashed #1fb264;
+  position: relative;
+  text-align: center;
+  height: 145px;
+  width: 60%;
+  margin-top: 40px;
+}
+
+.modal__uploadDone {
   margin: 0px;
   font-family: "Open Sans";
   padding: 0px;
@@ -88,7 +103,7 @@ h1 {
   padding: 10px 0;
   margin-top: 30px;
 }
-.drag-text text3 {
+.drag-text .modal__upload {
   font: 500 18px Rubik;
   text-transform: uppercase;
   color: #15824b;
@@ -106,6 +121,14 @@ h1 {
 }
 .modal__videoUpload {
   text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.modal__uploadDone {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .modalButton {
@@ -143,13 +166,44 @@ h1 {
   text-align: center;
   border: none;
   background-size: 300% 100%;
-
   border-radius: 50px;
   -o-transition: all 0.4s ease-in-out;
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
 }
 
+.btn-hover-disabled {
+  width: 200px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  pointer-events: none;
+  margin: 20px;
+  height: 55px;
+  text-align: center;
+  border: none;
+  background-size: 300% 100%;
+  border-radius: 50px;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+.walletClass{
+  padding: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  color: rgb(0, 0, 0);
+  pointer-events: none;
+  margin: 20px;
+  height: 55px;
+  text-align: center;
+  border: none;
+  background-size: 300% 100%;
+  border-radius: 50px;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
 .btn-hover:hover {
   background-position: 100% 0;
 
@@ -173,6 +227,110 @@ h1 {
   box-shadow: 0 4px 15px 0 rgba(23, 168, 108, 0.75);
 }
 
+.color-disabled {
+  background-image: linear-gradient(
+    to right,
+    #c2c2c2,
+    #c2c2c2,
+    #c2c2c2,
+    #c2c2c2
+  );
+}
+
 .modal__submitButton {
   text-align: center;
+}
+/* new drag and drop csss */
+.drop-file-input {
+  position: relative;
+  width: 400px;
+  height: 200px;
+  border: 2px dashed var(--border-color);
+  border-radius: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: var(--input-bg);
+}
+
+.drop-file-input input {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.drop-file-input:hover,
+.drop-file-input.dragover {
+  opacity: 0.6;
+}
+
+.drop-file-input__label {
+  text-align: center;
+  color: var(--txt-second-color);
+  font-weight: 600;
+  padding: 10px;
+}
+
+.drop-file-input__label img {
+  width: 100px;
+}
+
+.drop-file-preview {
+  margin-top: 30px;
+}
+
+.drop-file-preview p {
+  font-weight: 500;
+}
+
+.drop-file-preview__title {
+  margin-bottom: 20px;
+}
+
+.drop-file-preview__item {
+  position: relative;
+  display: flex;
+  margin-bottom: 10px;
+  background-color: var(--input-bg);
+  padding: 15px;
+  border-radius: 20px;
+}
+
+.drop-file-preview__item img {
+  width: 50px;
+  margin-right: 20px;
+}
+
+.drop-file-preview__item__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.drop-file-preview__item__del {
+  background-color: var(--box-bg);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  box-shadow: var(--box-shadow);
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.drop-file-preview__item:hover .drop-file-preview__item__del {
+  opacity: 1;
 }

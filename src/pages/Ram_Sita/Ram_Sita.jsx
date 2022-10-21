@@ -1,8 +1,9 @@
 import React from "react";
 import "../../assets/css/Ram_Sita.css";
-import video from "../../assets/video/Final_Render_2.mp4";
+
 
 const Ram_Sita = () => {
+  const video = "https://res.cloudinary.com/dde6glimb/video/upload/v1665922771/Final_Render_2_nseqqi.mp4";
 
   return (
     <div className="topContainer">

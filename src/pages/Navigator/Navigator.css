@@ -1,0 +1,76 @@
+.navigatorImage{
+    
+    background-image: url("./../../assets/images/navigator.JPG");
+    width: 100vw;
+  /* max-width: 500px; */
+  height: 100vh;
+  z-index: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+}
+.navigateDarshana{
+    width: 35%;
+    height: 40%;
+}
+.navigateDhyana{
+    width: 20%;
+    height: 40%;
+}
+.navigateYog{
+    width: 25%;
+    height: 40%;
+}
+.navigateKriya{
+    width: 25%;
+    height: 40%;
+}
+
+@media only screen and (max-width: 1000px) {
+
+    .navigatorImage{
+    
+    background-image: url("./../../assets/images/navigator-2.jpg");
+    width: 100%;
+  /* max-width: 500px; */
+  height: 100%;
+  z-index: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+  object-fit: fill;
+  overflow: hidden;
+  background-color: transparent;
+  display: flexbox;
+  justify-content: center;
+  
+}
+.navigateDarshana{
+    width: 27%;
+    height: 40%;
+   
+    
+}
+.navigateDhyana{
+    width: 20%;
+    height: 40%;
+}
+.navigateYog{
+    width: 25%;
+    height: 40%;
+}
+.navigateKriya{
+    width: 22%;
+    height: 40%;
+}
+}

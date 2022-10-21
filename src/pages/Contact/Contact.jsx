@@ -74,11 +74,8 @@ const Contact = () => {
 
 
   useEffect(() => {
-    const data1 = window.localStorage.getItem("name");
-    const data2 = window.localStorage.getItem("number");
+  
 
-    setName(data1);
-    setNumber(data2);
 
     audioRef.current.play()
 
