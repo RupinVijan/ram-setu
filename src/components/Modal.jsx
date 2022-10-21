@@ -4,15 +4,26 @@ import PropTypes from "prop-types";
 import { WalletContext } from "../context/WalletContext";
 import uploadImg from "../assets/images/cloud-upload-regular-240.png";
 import { v4 as uuidv4 } from "uuid";
-
-const Modal = ({ onRequestClose }) => {
-  const [media, setMedia] = useState("");
+import { useNavigate } from "react-router-dom";
+import { Loader } from "./Loader";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+const Modal = ({ onRequestClose,pathName }) => {
+  const [media, setMedia] = useState(false);
   const [loaded, setLoaded] = useState(false);
   const [walletConnected, setWalletConnected] = useState(false);
-
+  const [preLoader, setPreLoader] = useState(false);
+  const navigate = useNavigate();
   const { connectWallet, currentAccount, disconnectWallet } =
     React.useContext(WalletContext);
-
+    let pageName = "";
+    if(pathName === "/yogaToken") {
+      pageName = "Yoga"
+    } else if(pathName === "/dhyanaToken") {
+      pageName = "Dhyana"
+    }
+    const pageText = "Thank You for submitting your video, you will soon be awarded with the " + pageName + " Token";
+    const successMessage = () => toast.success(pageText);
   const handleChangeMedia = (e) => {
     // console.log(e.target.files[0].name)
     setMedia(e.target.files[0]);
@@ -39,6 +50,7 @@ const Modal = ({ onRequestClose }) => {
   const onDrop = () => wrapperRef.current.classList.remove("dragover");
 
   const handleSubmit = async () => {
+    setPreLoader(true);
     console.log(media);
     const mediaName = uuidv4();
     var formData = new FormData();
@@ -52,7 +64,17 @@ const Modal = ({ onRequestClose }) => {
       method: "POST",
       body: formData,
     });
-    let data = await response.json();
+    let data;
+    
+    try {
+      data = await response.json();
+      successMessage();
+      setTimeout(() => {
+        navigate("/navigator");
+      }, 3000);
+    } catch (error) {
+      console.log(error);
+    }
     console.log(data);
 
     const requestOptions = {
@@ -68,6 +90,7 @@ const Modal = ({ onRequestClose }) => {
       .then((response) => response.json())
       .then((data) => console.log(data));
     // onRequestClose();
+    
   };
 
   useEffect(() => {
@@ -103,91 +126,105 @@ const Modal = ({ onRequestClose }) => {
             </button>
           </div>
         </div>
-        {
-          walletConnected && 
-          <div>
-          <div className="modal__videoUpload">
-          {!loaded && (
-            <div
-              ref={wrapperRef}
-              className="drop-file-input"
-              onDragEnter={onDragEnter}
-              onDragLeave={onDragLeave}
-              onDrop={onDrop}
-            >
-              <div className="drop-file-input__label">
-                <img src={uploadImg} alt="Uploading IMG" />
-                <p>Drag & Drop your files here</p>
-              </div>
+        {!preLoader && (
+          <div className="modal__buttonDetails">
+            <div className="modal__videoUpload">
+              {!loaded && (
+                <div
+                  ref={wrapperRef}
+                  className="drop-file-input"
+                  onDragEnter={onDragEnter}
+                  onDragLeave={onDragLeave}
+                  onDrop={onDrop}
+                >
+                  <div className="drop-file-input__label">
+                    <img src={uploadImg} alt="Uploading IMG" />
+                    <p>Drag & Drop your files here</p>
+                  </div>
+                  <input
+                    type="file"
+                    value=""
+                    onChange={(e) => handleChangeMedia(e)}
+                  />
+                </div>
+              )}
+              {loaded && <div className="modal__uploadDone">{media?.name}</div>}
               <input
+                className="modal__containerButton video-upload-wrap"
                 type="file"
-                value=""
+                id="input_151"
+                multiple=""
+                accept=".mp4, .mov"
+                data-file-minsize="0"
+                data-file-limit="0"
+                data-component="fileupload"
+                // onInput={readURL(this)}
+                hidden=""
                 onChange={(e) => handleChangeMedia(e)}
               />
             </div>
-          )}
-          {loaded && <div className="modal__uploadDone">{media?.name}</div>}
-          <input
-            className="modal__containerButton video-upload-wrap"
-            type="file"
-            id="input_151"
-            multiple=""
-            accept=".mp4, .mov"
-            data-file-minsize="0"
-            data-file-limit="0"
-            data-component="fileupload"
-            // onInput={readURL(this)}
-            hidden=""
-            onChange={(e) => handleChangeMedia(e)}
-          />
-        </div>
-        {walletConnected && (
-          <div className="modal__submitButton">
-            <button className="btn-hover color-5" onClick={handleSubmit}>
-              SUBMIT
-            </button>
-          </div>
-        )}
+            
+            {(walletConnected && media)  && (
+              <div className="modal__submitButton">
+                <button className="btn-hover color-5" onClick={handleSubmit}>
+                  SUBMIT
+                </button>
+              </div>
+            )}
 
-        {!walletConnected && (
-          <div className="modal__submitButton">
-            <button
-              className="btn-hover-disabled color-disabled"
-              onClick={handleSubmit}
-            >
-              SUBMIT
-            </button>
+            {(!walletConnected || !media) && (
+              <div className="modal__submitButton">
+                <button
+                  className="btn-hover-disabled color-disabled"
+                  onClick={handleSubmit}
+                >
+                  SUBMIT
+                </button>
+              </div>
+            )}
+            {!walletConnected && (
+              <div className="modal__submitButton">
+                <button
+                  className="btn-hover color-5"
+                  onClick={handleSubmitWallet}
+                >
+                  Connect To Wallet
+                </button>
+              </div>
+            )}
+            {walletConnected && (
+              <div className="modal__submitButton">
+                <button className=" color-disabled walletClass">
+                  Wallet ID: {currentAccount}
+                </button>
+              </div>
+            )}
+            {walletConnected && (
+              <div className="modal__submitButton">
+                <button
+                  className="btn-hover color-5"
+                  onClick={handleDisconnectWallet}
+                >
+                  Disconnect Wallet
+                </button>
+              </div>
+            )}
           </div>
         )}
-        </div>
-        }
-        
-        
-        {!walletConnected && (
-          <div className="modal__submitButton">
-            <button className="btn-hover color-5" onClick={handleSubmitWallet}>
-              Connect To Wallet
-            </button>
-          </div>
-        )}
-        {walletConnected && (
-          <div className="modal__submitButton">
-            <button className=" color-disabled walletClass">
-              Wallet ID: {currentAccount}
-            </button>
-          </div>
-        )}
-        {walletConnected && (
-          <div className="modal__submitButton">
-            <button
-              className="btn-hover color-5"
-              onClick={handleDisconnectWallet}
-            >
-              Disconnect Wallet
-            </button>
-          </div>
-        )}
+        {preLoader && <Loader />}
       </div>
+      <ToastContainer 
+  position="top-center"
+  autoClose={5000}
+  hideProgressBar={false}
+  newestOnTop={false}
+  closeOnClick
+  rtl={false}
+  pauseOnFocusLoss
+  draggable
+  pauseOnHover
+  theme="dark"
+/>
     </div>
   );
 };
