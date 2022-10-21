@@ -171,7 +171,7 @@ const Modal = ({ onRequestClose }) => {
           </div>
         )}
         {walletConnected && (
-          <div className="modal__submitButton">
+          <div className="modal__submitButton walletConnect">
             <button className=" color-disabled walletClass">
               Wallet ID: {currentAccount}
             </button>

@@ -19,7 +19,9 @@ h1 {
   min-height: 100px;
   margin-bottom: 30px;
 }
+.walletConnect{
 
+}
 .modal__backdrop {
   background: rgba(0, 0, 0, 0.65);
   bottom: 0;
@@ -235,6 +237,8 @@ h1 {
     #c2c2c2,
     #c2c2c2
   );
+  /* width: 90%; */
+  padding: 5px;
 }
 
 .modal__submitButton {
@@ -333,4 +337,36 @@ h1 {
 
 .drop-file-preview__item:hover .drop-file-preview__item__del {
   opacity: 1;
+}
+
+@media only screen and (max-width: 1024px){
+  .color-disabled {
+    font-size: 0.7rem;
+  }
+
+}
+
+@media only screen and (max-width: 750px){
+ 
+  .modal__container{
+    width: 80vw;
+    /* height: 80vh; */
+  }
+  .modal__containerHeader{
+    width: 80vw;
+  }
+  
+}
+
+
+@media only screen and (max-width: 410px){
+  .color-disabled {
+    font-size: 0.5rem;
+  }
+} 
+@media only screen and (max-height: 900px){
+  .modal__container{
+    /* width: 80vw; */
+    height: 90vh;
+  }
 }
