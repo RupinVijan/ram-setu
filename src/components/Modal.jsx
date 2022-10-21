@@ -176,7 +176,7 @@ const Modal = ({ onRequestClose,pathName }) => {
             {(!walletConnected || !media) && (
               <div className="modal__submitButton">
                 <button
-                  className="btn-hover-disabled color-disabled"
+                  className="btn-hover-disabled color-disabled-submit"
                   onClick={handleSubmit}
                 >
                   SUBMIT

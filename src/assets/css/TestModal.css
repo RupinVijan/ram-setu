@@ -229,7 +229,7 @@ h1 {
   box-shadow: 0 4px 15px 0 rgba(23, 168, 108, 0.75);
 }
 
-.color-disabled {
+.color-disabled, .color-disabled-submit {
   background-image: linear-gradient(
     to right,
     #c2c2c2,
@@ -238,7 +238,7 @@ h1 {
     #c2c2c2
   );
   /* width: 90%; */
-  padding: 5px;
+  /* padding: 5px; */
 }
 
 .modal__submitButton {
