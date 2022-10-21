@@ -129,7 +129,7 @@ const Modal = ({ onRequestClose,pathName }) => {
         {!preLoader && (
           <div className="modal__buttonDetails">
             <div className="modal__videoUpload">
-              {!loaded && (
+              {!loaded && walletConnected && (
                 <div
                   ref={wrapperRef}
                   className="drop-file-input"
@@ -149,20 +149,25 @@ const Modal = ({ onRequestClose,pathName }) => {
                   />
                 </div>
               )}
-              {loaded && <div className="modal__uploadDone">{media?.name}</div>}
-              <input
-                className="modal__containerButton video-upload-wrap"
-                type="file"
-                id="input_151"
-                multiple=""
-                accept=".mp4, .mov"
-                data-file-minsize="0"
-                data-file-limit="0"
-                data-component="fileupload"
-                // onInput={readURL(this)}
-                hidden=""
-                onChange={(e) => handleChangeMedia(e)}
-              />
+              {loaded && walletConnected && <div className="modal__uploadDone">{media?.name}</div>}
+              {
+                walletConnected && (
+                  <input
+                    className="modal__containerButton video-upload-wrap"
+                    type="file"
+                    id="input_151"
+                    multiple=""
+                    accept=".mp4, .mov"
+                    data-file-minsize="0"
+                    data-file-limit="0"
+                    data-component="fileupload"
+                    // onInput={readURL(this)}
+                    hidden=""
+                    onChange={(e) => handleChangeMedia(e)}
+                  />
+                )
+              }
+              
             </div>
             
             {(walletConnected && media)  && (
@@ -173,7 +178,7 @@ const Modal = ({ onRequestClose,pathName }) => {
               </div>
             )}
 
-            {(!walletConnected || !media) && (
+            {(!walletConnected || !media) && walletConnected && (
               <div className="modal__submitButton">
                 <button
                   className="btn-hover-disabled color-disabled-submit"
