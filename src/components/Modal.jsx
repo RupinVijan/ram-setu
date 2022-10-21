@@ -103,7 +103,10 @@ const Modal = ({ onRequestClose }) => {
             </button>
           </div>
         </div>
-        <div className="modal__videoUpload">
+        {
+          walletConnected && 
+          <div>
+          <div className="modal__videoUpload">
           {!loaded && (
             <div
               ref={wrapperRef}
@@ -156,6 +159,10 @@ const Modal = ({ onRequestClose }) => {
             </button>
           </div>
         )}
+        </div>
+        }
+        
+        
         {!walletConnected && (
           <div className="modal__submitButton">
             <button className="btn-hover color-5" onClick={handleSubmitWallet}>
