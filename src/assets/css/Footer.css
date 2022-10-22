@@ -1,0 +1,17 @@
+.lowerFooter{
+    display: flex;
+  /* flex-direction: row; */
+  justify-content: space-between;
+  flex-direction: flex-end;
+    width: 100%;
+}
+
+.iconsPoint{
+    cursor: pointer;
+    text-decoration: none;
+    /* background-color: white; */
+    color: white;
+    
+}
+
+

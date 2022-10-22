@@ -19,9 +19,7 @@ h1 {
   min-height: 100px;
   margin-bottom: 30px;
 }
-.walletConnect{
 
-}
 .modal__backdrop {
   background: rgba(0, 0, 0, 0.65);
   bottom: 0;
@@ -244,7 +242,7 @@ h1 {
 .modal__submitButton {
   text-align: center;
 }
-/* new drag and drop csss */
+/* new drag and drop css */
 .drop-file-input {
   position: relative;
   width: 400px;

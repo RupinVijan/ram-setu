@@ -1,0 +1,25 @@
+.upperFooter{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: left;
+    
+}
+.upperFooter a{
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    margin: 15px;
+}
+
+.upperFooter a:hover{
+    text-decoration: underline;
+    transition: ease-in 0.3s;
+}
+
+@media only screen and (max-width: 600px) {
+    .upperFooter{
+        flex-direction: column;
+    }
+}
