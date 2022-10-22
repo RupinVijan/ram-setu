@@ -1,0 +1,12 @@
+.video{
+    position: absolute;
+    z-index: -1;
+    width: 50%;
+    overflow: hidden;
+    height: 155.5%;
+    justify-content: center;
+    top: 0;
+    bottom: 0;
+    align-items: center;
+
+}
