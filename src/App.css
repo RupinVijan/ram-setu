@@ -43,7 +43,9 @@
   align-items: center;
   font-weight: 500;
 }
-
+.font-scriptina{
+  font-family: 'SCRIPTIN';
+}
 #clickText img {
   height: 200px;
   width: 200px;
