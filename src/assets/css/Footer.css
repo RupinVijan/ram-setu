@@ -11,7 +11,12 @@
     text-decoration: none;
     /* background-color: white; */
     color: white;
-    
+}
+
+@media only screen and (max-width: 600px) {
+    .lowerFooter{
+        flex-direction: column;
+    }
 }
 
 
