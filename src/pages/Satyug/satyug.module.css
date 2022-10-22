@@ -2,6 +2,7 @@
     height:99.435vh;
     width: 100vw;
     /* height: 5000px; */
+    z-index: 0;
 }
 
 .vidStyles{
@@ -15,4 +16,17 @@
     height: 100vh;
     position: fixed;
     left: 0;
+}
+.linkHome{
+    display: flex;
+    justify-content: space-between;
+    width: 80vw;
+}
+.clickEnterText{
+    cursor:pointer;
+}
+@media screen and (max-width: 500px) {
+    .clickEnterText{
+        font-size: 2rem;
+    }
 }

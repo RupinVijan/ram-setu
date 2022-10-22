@@ -8,6 +8,7 @@ import UpperFooter from "../components/UpperFooter";
 function Home() {
   useEffect(() => {
     AOS.init()
+    window.scrollTo(0,0);
   }, []);
   return (
     <>
