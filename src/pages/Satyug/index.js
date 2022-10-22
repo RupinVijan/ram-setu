@@ -15,7 +15,7 @@ const Dhyana = () => {
 let screenWidth = getWindowDimensions().width;
   const v =
     screenWidth>600?
-    "https://res.cloudinary.com/dde6glimb/video/upload/v1665915468/Main_Video_1_gfaand.mp4":"https://res.cloudinary.com/dde6glimb/video/upload/v1666363409/Untitled_im96cs.mp4";
+    "https://res.cloudinary.com/dde6glimb/video/upload/v1665915468/Main_Video_1_gfaand.mp4":"https://res.cloudinary.com/dde6glimb/video/upload/v1666419775/M-1_-_Compressed_with_FlexClip_dpfv1b.mp4";
 
   const navigate = useNavigate();
 

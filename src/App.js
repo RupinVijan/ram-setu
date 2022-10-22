@@ -16,6 +16,7 @@ import YogaToken from "./pages/YogaToken/YogaToken";
 import DhyanaToken from "./pages/Satyug/dhyanaToken/DhyanaToken";
 import ComingSoon from "./pages/comingSoon and 404/ComingSoon";
 import NotFound from "./pages/comingSoon and 404/NotFound";
+import Homee from './pages/Homee'
 // import TestModal from "./pages/TestModal/TestModal";
 function App() {
   const Bg_Video =
@@ -29,7 +30,8 @@ function App() {
       ) : null}
 
       <Routes>
-        <Route path="/" element={<Satyug />} />
+        <Route path="/" element={<Homee />} />
+        <Route path="/home" element={<Satyug />} />
         <Route path="/ram-setu/" element={<Home />} />
         <Route path="/ram-setu/setu" element={<Setu />} />
         <Route path="/ram-setu/mask" element={<Mask />} />

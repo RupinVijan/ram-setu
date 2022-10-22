@@ -13,7 +13,7 @@ const Dhyana = () => {
     }
     let screenWidth = getWindowDimensions().width;
 
-    const v = screenWidth>600?"https://res.cloudinary.com/dde6glimb/video/upload/v1665916476/Dhyana_Video_1_gybggg.mp4":"https://res.cloudinary.com/dde6glimb/video/upload/v1666363803/Untitled_1_dy1egm.mp4";
+    const v = screenWidth>600?"https://res.cloudinary.com/dde6glimb/video/upload/v1665916476/Dhyana_Video_1_gybggg.mp4":"https://res.cloudinary.com/dde6glimb/video/upload/v1666419487/M-2_-_Compressed_with_FlexClip_ud6vfg.mp4";
 
    
 
