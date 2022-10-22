@@ -15,17 +15,17 @@ function Home() {
       <div className="HomeDiv container">
         <div className="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3  shadow-lg">
           <div className="col-lg-12 p-3 p-lg-5 pt-lg-3">
-            <h2 className="display-4 fw-bold lh-1 text-light font-scriptina"> 
+            <h2 className="display-4 fw-bold lh-1 font-scriptina"> 
             <Typical
-        steps={['Sat in Sanskrit stands for "Truthful and Right" and Yug stands for "Period of Time "', 6000]}
-        loop={Infinity}
+        steps={['Sat in Sanskrit stands for "Right and Truthful" and Yug stands for "Period of Time"', 2000]}
+        // loop={Infinity}
         wrapper="h2"
       />  
             </h2>
       </div>
         </div>
       </div>
-      <div className="HomeDiv container" data-aos="fade-down-right"  data-aos-easing="ease-in-back" data-aos-delay="500">
+      {/* <div className="HomeDiv container" data-aos="fade-down-right"  data-aos-easing="ease-in-back" data-aos-delay="500">
         <div className="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3  shadow-lg">
           <div className="col-lg-12 p-3 p-lg-5 pt-lg-3">
             <h2 className="display-4 fw-bold lh-1 text-light font-shalimar"> 
@@ -33,13 +33,13 @@ function Home() {
             </h2>
       </div>
         </div>
-      </div>
-      <div className="HomeDiv container"  data-aos="fade-up-left"  data-aos-easing="ease-in-back" data-aos-delay="700">
+      </div> */}
+      {/* <div className="HomeDiv container"  data-aos="fade-up-left"  data-aos-easing="ease-in-back" data-aos-delay="700">
         <div className="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3  shadow-lg">
           <div className="col-lg-12 p-3 p-lg-5 pt-lg-3">
             <h2 className="display-4 fw-bold lh-1 text-light font-shalimar"> 
             The next wave of Web3 adoption will not be about DeFi and NFT's, it will be about Politics and Memes. <br/>
-            <span className="click-pointer" onClick={()=>{
+            <span className="click-pointer" style={{color:'#ff00ff'}} onClick={()=>{
               window.location.href = '/ram-setu'
             }}>Check out Ram-Setu</span>
             </h2>
@@ -51,7 +51,7 @@ function Home() {
           <div className="col-lg-12 p-3 p-lg-5 pt-lg-3">
             <h2 className="display-4 fw-bold lh-1 text-light font-shalimar"> 
             Imagine if you are Mark Zuckerberg who has 10 billion Dollars and you have no way to spend it all, except the endless Modern-day Cycle of “Consumption”. You go ahead and buy back your own stocks ( which is another form of Consumption in Hope for Future appreciation) or you create a Metaverse with gated monetizable API’s (again which is Consumption at every incremental step) <br/>
-            <span className="click-pointer" onClick={()=>{
+            <span className="click-pointer" style={{color:'#ff00ff'}} onClick={()=>{
               window.location.href = '/coming-soon'
             }}>Check out Satyug DAO</span>
             </h2>
@@ -68,38 +68,58 @@ Basically 90% of the World’s Jobs will be displaced by the year 2030, leading 
             </h2>
       </div>
         </div>
+      </div> */}
+      <div className="HomeDiv container"  data-aos="fade-up-right"  data-aos-easing="ease-in-back" data-aos-delay="1500">
+        <div className="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3  shadow-lg">
+          <div className="col-lg-12 p-3 p-lg-5 pt-lg-3">
+            <h2 className="display-4 fw-bold lh-1 text-light font-shalimar click-pointer" onClick={()=>{
+              window.location.href = '/ram-setu'
+            }}> 
+            <span style={{color:'gold'}}>
+            Ram Setu   &nbsp;
+            </span>
+             - Invoke human consciousness through the power of memes
+
+            </h2>
       </div>
-      <div className="HomeDiv container"  data-aos="fade-up-right"  data-aos-easing="ease-in-back" data-aos-delay="500">
+        </div>
+      </div>
+      <div className="HomeDiv container"  data-aos="fade-up-right"  data-aos-easing="ease-in-back" data-aos-delay="1800">
         <div className="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3  shadow-lg">
           <div className="col-lg-12 p-3 p-lg-5 pt-lg-3">
             <h2 className="display-4 fw-bold lh-1 text-light font-shalimar click-pointer" onClick={()=>{
               window.location.href = '/dhyana'
             }}> 
-            Dhyana - Get Paid for doing Nothing at all
+            <span style={{color:'gold'}}>
+            Dhyana   &nbsp;
+            </span>
+             - Get Paid for doing Nothing at all
 
             </h2>
       </div>
         </div>
       </div>
-      <div className="HomeDiv container" data-aos="fade-down-left"  data-aos-easing="ease-in-back" data-aos-delay="500">
+      <div className="HomeDiv container" data-aos="fade-down-left"  data-aos-easing="ease-in-back" data-aos-delay="2300">
         <div className="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3  shadow-lg">
           <div className="col-lg-12 p-3 p-lg-5 pt-lg-3">
             <h2 className="display-4 fw-bold lh-1 text-light font-shalimar click-pointer" onClick={()=>{
               window.location.href = '/home'
             }}> 
-            Darshan Virtual Religious Tourism in VR. 
+            <span style={{color:'gold'}}>Darshan &nbsp;</span>
+            - Virtual Religious Tourism in VR. 
 
             </h2>
       </div>
         </div>
       </div>
-      <div className="HomeDiv container"  data-aos="fade-down-right"  data-aos-easing="ease-in-back" data-aos-delay="500">
+      <div className="HomeDiv container"  data-aos="fade-down-right"  data-aos-easing="ease-in-back" data-aos-delay="2900">
         <div className="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3  shadow-lg">
           <div className="col-lg-12 p-3 p-lg-5 pt-lg-3">
             <h2 className="display-4 fw-bold lh-1 text-light font-shalimar click-pointer" onClick={()=>{
               window.location.href = '/coming-soon'
             }}> 
-            Kriya The Mythological game based in the year 3198 BC, set by Alien-Gods
+            <span style={{color:'gold'}}>Kriya &nbsp;</span>
+            - A Mythological game based in the year 3198 BC, set by Alien-Gods
 
             </h2>
       </div>
@@ -111,7 +131,8 @@ Basically 90% of the World’s Jobs will be displaced by the year 2030, leading 
             <h2 className="display-4 fw-bold lh-1 text-light font-shalimar click-pointer" onClick={()=>{
               window.location.href = '/yoga'
             }}> 
-            Yoga Perform Yoga. We pay you for that.
+            <span style={{color:'gold'}}>Yoga &nbsp;</span>
+            - Perform Yoga. We pay you for that.
 
             </h2>
       </div>

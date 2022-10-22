@@ -22,8 +22,11 @@ let screenWidth = getWindowDimensions().width;
   return (
     <>
       <div className="text-center clickToEnter" id="clickText" >
-        Click to Enter
-        <img src={satyugLogo} alt='Satyug Logo'/>
+        Click to Enter  &nbsp;    <div onClick={()=>{
+          window.location.href = '/about'
+       }}> About Us</div>
+        <img src={satyugLogo} alt='Satyug Logo'/> 
+      
       </div>
       <div className={classes.container}>
         <video
@@ -31,7 +34,7 @@ let screenWidth = getWindowDimensions().width;
           className={classes.vidStyles}
           playsInline
           onClick={(e) => {
-            e.target.play();
+            // e.target.play();
             document.getElementById('clickText').style.display="none";
           }}
           onEnded={() => navigate("/navigator")}

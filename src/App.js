@@ -30,8 +30,8 @@ function App() {
       ) : null}
 
       <Routes>
-        <Route path="/" element={<Homee />} />
-        <Route path="/home" element={<Satyug />} />
+        <Route path="/" element={<Satyug />} />
+        <Route path="/about" element={<Homee />} />
         <Route path="/ram-setu/" element={<Home />} />
         <Route path="/ram-setu/setu" element={<Setu />} />
         <Route path="/ram-setu/mask" element={<Mask />} />
