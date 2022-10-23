@@ -19,24 +19,23 @@ import NotFound from "./pages/comingSoon and 404/NotFound";
 import Homee from './pages/Homee'
 // import TestModal from "./pages/TestModal/TestModal";
 function App() {
-  const Bg_Video =
-    "https://res.cloudinary.com/dde6glimb/video/upload/v1665922766/Waves_vsucxi.mp4";
   return (
-    <div className="App">
+    <>
+     <Routes>
+        <Route path="/" element={<Satyug />} />
+        <Route path="/about" element={<Homee />} />
+    {/* <div className="App">
       {window.location.href.includes("ram-setu") ? (
         <video autoPlay muted loop id="myBGVideo">
           <source src={Bg_Video} type=""></source>
         </video>
-      ) : null}
-
-      <Routes>
-        <Route path="/" element={<Satyug />} />
-        <Route path="/about" element={<Homee />} />
+      ) : null} */}
         <Route path="/ram-setu/" element={<Home />} />
         <Route path="/ram-setu/setu" element={<Setu />} />
         <Route path="/ram-setu/mask" element={<Mask />} />
         <Route path="/ram-setu/contact" element={<Contact />} />
         <Route path="/ram-setu/ram-sita" element={<RamSita />} />
+    {/* </div> */}
         <Route path="/navigator" element={<Navigator />} />
         <Route path="/yog" element={<Yog />} />
         <Route path="/dhyana" element={<Dhyana />} />
@@ -46,7 +45,7 @@ function App() {
         <Route path="/coming-soon" element={<ComingSoon />} />
         <Route path="/*" element={<NotFound />} />
       </Routes>
-    </div>
+    </>
   );
 }
 

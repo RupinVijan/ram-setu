@@ -53,6 +53,10 @@ const Setu = () => {
 
   const [isDragging, setDragging] = useState(false);
   return (
+    <div className="App">
+    <video autoPlay muted loop id="myBGVideo">
+      <source src="https://res.cloudinary.com/dde6glimb/video/upload/v1665922766/Waves_vsucxi.mp4" type=""></source>
+    </video>
     <div className="imgContainer">
       <video
         autoPlay
@@ -108,6 +112,7 @@ const Setu = () => {
         }}
       />
        : null}
+    </div>
     </div>
   );
 };

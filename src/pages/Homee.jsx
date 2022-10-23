@@ -5,8 +5,10 @@ import Typical from 'react-typical';
 import Footer from "../components/Footer";
 import UpperFooter from "../components/UpperFooter";
 import cs from "./Home.module.css"
+import { useNavigate } from "react-router-dom";
 
 function Home() {
+  const navigate = useNavigate();
   const v1 = "https://res.cloudinary.com/dde6glimb/video/upload/v1666530742/earth_lymmu1.mp4";
   const[hideContent,setHideContent]=useState(true)
   useEffect(() => {
@@ -22,7 +24,7 @@ function Home() {
     <>
     <div className="homeIndex ">
 
-    <video  src={v1} autoPlay onClick={e=>{e.stopPropagation()}} playsInline loop  className={cs.video}/>
+    <video  src={v1} autoPlay playsInline loop  className={cs.video}/>
       <div className="HomeDiv container" style={{zIndex:'1000'}}>
         <div className="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3  shadow-lg">
           <div className="col-lg-12 p-3 p-lg-5 pt-lg-3">
@@ -42,10 +44,10 @@ function Home() {
         <div className="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3  shadow-lg">
           <div className="col-lg-12 p-3 p-lg-5 pt-lg-3">
             <h2 className="display-4 fw-bold lh-1 text-light font-shalimar click-pointer" onClick={()=>{
-              window.location.href = '/ram-setu';
-              console.log(1)
+              navigate('/ram-setu');
+              
             }}> 
-            <span style={{color:'gold'}} onClick={()=>{console.log(1)}} >
+            <span style={{color:'gold'}} >
             Ram Setu   &nbsp;
             </span>
              - Invoke human consciousness through the power of memes
@@ -58,7 +60,7 @@ function Home() {
         <div className="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3  shadow-lg">
           <div className="col-lg-12 p-3 p-lg-5 pt-lg-3">
             <h2 className="display-4 fw-bold lh-1 text-light font-shalimar click-pointer" onClick={()=>{
-              window.location.href = '/dhyana'
+              navigate('/dhyana');
             }}> 
             <span style={{color:'gold'}}>
             Dhyana   &nbsp;
@@ -73,7 +75,8 @@ function Home() {
         <div className="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3  shadow-lg">
           <div className="col-lg-12 p-3 p-lg-5 pt-lg-3">
             <h2 className="display-4 fw-bold lh-1 text-light font-shalimar click-pointer" onClick={()=>{
-              window.location.href = '/home'
+              
+              navigate('/');
             }}> 
             <span style={{color:'gold'}}>Darshan &nbsp;</span>
             - Virtual Religious Tourism in VR. 
@@ -86,6 +89,7 @@ function Home() {
           <div className="col-lg-12 p-3 p-lg-5 pt-lg-3">
             <h2 className="display-4 fw-bold lh-1 text-light font-shalimar click-pointer" onClick={()=>{
               window.location.href = '/coming-soon'
+              navigate('/coming-soon');
             }}> 
             <span style={{color:'gold'}}>Kriya &nbsp;</span>
             - A Mythological game based in the year 3198 BC, set by Alien-Gods
@@ -98,7 +102,7 @@ function Home() {
         <div className="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3  shadow-lg">
           <div className="col-lg-12 p-3 p-lg-5 pt-lg-3">
             <h2 className="display-4 fw-bold lh-1 text-light font-shalimar click-pointer" onClick={()=>{
-              window.location.href = '/yoga'
+              navigate('/yoga');
             }}> 
             <span style={{color:'gold'}}>Yoga &nbsp;</span>
             - Perform Yoga. We pay you for that.

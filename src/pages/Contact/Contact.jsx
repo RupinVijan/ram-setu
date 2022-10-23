@@ -25,7 +25,7 @@ const Contact = () => {
   const shareData = {
     title: "Satyug",
     text: "Shri Ram ko aapki sahayata chaiye! jaldi neeche diye gaye link ko dabaye and Sita Maa ko bachaye !",
-    url: window.location.origin,
+    url: 'https://satyug.life/ram-setu',
   };
   
   const save = async () => {
@@ -93,7 +93,10 @@ const Contact = () => {
   // } ,[name,number])
 
   return (
-    
+    <div className="App">
+    <video autoPlay muted loop id="myBGVideo">
+      <source src="https://res.cloudinary.com/dde6glimb/video/upload/v1665922766/Waves_vsucxi.mp4" type=""></source>
+    </video>
     <div className="background d-flex justify-content-center">
   
     
@@ -206,6 +209,8 @@ const Contact = () => {
         alt="Hanuman img"
       />
     </div>
+    </div>
+    
   );
 };
 
