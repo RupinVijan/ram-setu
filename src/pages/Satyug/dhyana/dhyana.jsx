@@ -18,9 +18,10 @@ const Dhyana = () => {
    
 
     return (
-        
+        <div className="App">
         <div className={classes.container} >
             <video src={v} playsInline className={classes.vidStyles} onEnded={()=>navigate("/DhyanaToken")} autoPlay/>
+        </div>
         </div>
     )
 }

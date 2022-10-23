@@ -9,7 +9,7 @@
   .App{
     display:flex;
     justify-content: center;
-    /* overflow-x: hidden; */
+    overflow-x: hidden;
     z-index: -1;
     /* background-color: black; */
     /* background:url("./assets/video/wave\ 4.gif"); */
@@ -80,9 +80,9 @@
   }
 }
 .homeIndex{
-  background: url('./assets/images/ni.png');
-  background-size: cover;
-  background-repeat: no-repeat;
+  background: transparent;
+  /* background-size: cover; */
+  /* background-repeat: no-repeat; */
   color: white;
   width: 100vw;
   display: flex;

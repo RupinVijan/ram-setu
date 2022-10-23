@@ -22,6 +22,7 @@ const Dhyana = () => {
   const refVid = useRef();
   return (
     <>
+    <div className="App">
       <div className="text-center clickToEnter" id="clickText">
         <div className={classes.linkHome}>
         <div className={classes.clickEnterText} onClick={
@@ -48,6 +49,7 @@ const Dhyana = () => {
           onEnded={() => navigate("/navigator")}
           ref = {refVid}
         />
+      </div>
       </div>
     </>
   );

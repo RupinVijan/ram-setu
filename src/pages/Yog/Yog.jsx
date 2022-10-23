@@ -20,6 +20,7 @@ const Yog = () => {
 
   const navigate = useNavigate();
   return (
+    <div className="App">
     <div className={classes.container}>
       <video
         src={v}
@@ -28,6 +29,7 @@ const Yog = () => {
         autoPlay
         onEnded={() => navigate("/yogaToken")}
       />
+    </div>
     </div>
   );
 };
