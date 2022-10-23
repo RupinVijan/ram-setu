@@ -1,4 +1,4 @@
-import React , {useEffect} from "react";
+import React , {useEffect, useState} from "react";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Typical from 'react-typical';
@@ -8,16 +8,22 @@ import cs from "./Home.module.css"
 
 function Home() {
   const v1 = "https://res.cloudinary.com/dde6glimb/video/upload/v1666530742/earth_lymmu1.mp4";
+  const[hideContent,setHideContent]=useState(true)
   useEffect(() => {
     AOS.init()
     window.scrollTo(0,0);
+    setTimeout(() => {
+      setHideContent(false)
+    }, 6000);
+    
   }, []);
+  
   return (
     <>
     <div className="homeIndex ">
 
-    <video  src={v1} autoPlay playsInline loop  className={cs.video}/>
-      <div className="HomeDiv container">
+    <video  src={v1} autoPlay onClick={e=>{e.stopPropagation()}} playsInline loop  className={cs.video}/>
+      <div className="HomeDiv container" style={{zIndex:'1000'}}>
         <div className="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3  shadow-lg">
           <div className="col-lg-12 p-3 p-lg-5 pt-lg-3">
             <h2 className="display-4 fw-bold lh-1 font-scriptina"> 
@@ -30,6 +36,84 @@ function Home() {
       </div>
         </div>
       </div>
+      
+       {hideContent===true?<></>:<div >
+              <div className="HomeDiv container"  data-aos="fade-up-right"  data-aos-easing="ease-in-back" data-aos-delay="1500">
+        <div className="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3  shadow-lg">
+          <div className="col-lg-12 p-3 p-lg-5 pt-lg-3">
+            <h2 className="display-4 fw-bold lh-1 text-light font-shalimar click-pointer" onClick={()=>{
+              window.location.href = '/ram-setu';
+              console.log(1)
+            }}> 
+            <span style={{color:'gold'}} onClick={()=>{console.log(1)}} >
+            Ram Setu   &nbsp;
+            </span>
+             - Invoke human consciousness through the power of memes
+
+            </h2>
+      </div>
+        </div>
+      </div>
+      <div className="HomeDiv container"  data-aos="fade-up-right"  data-aos-easing="ease-in-back" data-aos-delay="1800">
+        <div className="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3  shadow-lg">
+          <div className="col-lg-12 p-3 p-lg-5 pt-lg-3">
+            <h2 className="display-4 fw-bold lh-1 text-light font-shalimar click-pointer" onClick={()=>{
+              window.location.href = '/dhyana'
+            }}> 
+            <span style={{color:'gold'}}>
+            Dhyana   &nbsp;
+            </span>
+             - Get Paid for doing Nothing at all
+
+            </h2>
+      </div>
+        </div>
+      </div>
+      <div className="HomeDiv container" data-aos="fade-down-left"  data-aos-easing="ease-in-back" data-aos-delay="2300">
+        <div className="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3  shadow-lg">
+          <div className="col-lg-12 p-3 p-lg-5 pt-lg-3">
+            <h2 className="display-4 fw-bold lh-1 text-light font-shalimar click-pointer" onClick={()=>{
+              window.location.href = '/home'
+            }}> 
+            <span style={{color:'gold'}}>Darshan &nbsp;</span>
+            - Virtual Religious Tourism in VR. 
+            </h2>
+      </div>
+        </div>
+      </div>
+      <div className="HomeDiv container"  data-aos="fade-down-right"  data-aos-easing="ease-in-back" data-aos-delay="2900">
+        <div className="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3  shadow-lg">
+          <div className="col-lg-12 p-3 p-lg-5 pt-lg-3">
+            <h2 className="display-4 fw-bold lh-1 text-light font-shalimar click-pointer" onClick={()=>{
+              window.location.href = '/coming-soon'
+            }}> 
+            <span style={{color:'gold'}}>Kriya &nbsp;</span>
+            - A Mythological game based in the year 3198 BC, set by Alien-Gods
+
+            </h2>
+      </div>
+        </div>
+      </div>
+      <div className="HomeDiv container"  data-aos="fade-up-left"  data-aos-easing="ease-in-back" data-aos-delay="500">
+        <div className="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3  shadow-lg">
+          <div className="col-lg-12 p-3 p-lg-5 pt-lg-3">
+            <h2 className="display-4 fw-bold lh-1 text-light font-shalimar click-pointer" onClick={()=>{
+              window.location.href = '/yoga'
+            }}> 
+            <span style={{color:'gold'}}>Yoga &nbsp;</span>
+            - Perform Yoga. We pay you for that.
+
+            </h2>
+      </div>
+        </div>
+      </div>
+      
+      <UpperFooter />
+      <Footer/>
+            </div>}
+            
+
+      
       {/* <div className="HomeDiv container" data-aos="fade-down-right"  data-aos-easing="ease-in-back" data-aos-delay="500">
         <div className="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3  shadow-lg">
           <div className="col-lg-12 p-3 p-lg-5 pt-lg-3">
@@ -74,78 +158,7 @@ Basically 90% of the World’s Jobs will be displaced by the year 2030, leading 
       </div>
         </div>
       </div> */}
-      <div className="HomeDiv container"  data-aos="fade-up-right"  data-aos-easing="ease-in-back" data-aos-delay="1500">
-        <div className="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3  shadow-lg">
-          <div className="col-lg-12 p-3 p-lg-5 pt-lg-3">
-            <h2 className="display-4 fw-bold lh-1 text-light font-shalimar click-pointer" onClick={()=>{
-              window.location.href = '/ram-setu'
-            }}> 
-            <span style={{color:'gold'}}>
-            Ram Setu   &nbsp;
-            </span>
-             - Invoke human consciousness through the power of memes
-
-            </h2>
-      </div>
-        </div>
-      </div>
-      <div className="HomeDiv container"  data-aos="fade-up-right"  data-aos-easing="ease-in-back" data-aos-delay="1800">
-        <div className="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3  shadow-lg">
-          <div className="col-lg-12 p-3 p-lg-5 pt-lg-3">
-            <h2 className="display-4 fw-bold lh-1 text-light font-shalimar click-pointer" onClick={()=>{
-              window.location.href = '/dhyana'
-            }}> 
-            <span style={{color:'gold'}}>
-            Dhyana   &nbsp;
-            </span>
-             - Get Paid for doing Nothing at all
-
-            </h2>
-      </div>
-        </div>
-      </div>
-      <div className="HomeDiv container" data-aos="fade-down-left"  data-aos-easing="ease-in-back" data-aos-delay="2300">
-        <div className="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3  shadow-lg">
-          <div className="col-lg-12 p-3 p-lg-5 pt-lg-3">
-            <h2 className="display-4 fw-bold lh-1 text-light font-shalimar click-pointer" onClick={()=>{
-              window.location.href = '/home'
-            }}> 
-            <span style={{color:'gold'}}>Darshan &nbsp;</span>
-            - Virtual Religious Tourism in VR. 
-
-            </h2>
-      </div>
-        </div>
-      </div>
-      <div className="HomeDiv container"  data-aos="fade-down-right"  data-aos-easing="ease-in-back" data-aos-delay="2900">
-        <div className="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3  shadow-lg">
-          <div className="col-lg-12 p-3 p-lg-5 pt-lg-3">
-            <h2 className="display-4 fw-bold lh-1 text-light font-shalimar click-pointer" onClick={()=>{
-              window.location.href = '/coming-soon'
-            }}> 
-            <span style={{color:'gold'}}>Kriya &nbsp;</span>
-            - A Mythological game based in the year 3198 BC, set by Alien-Gods
-
-            </h2>
-      </div>
-        </div>
-      </div>
-      <div className="HomeDiv container"  data-aos="fade-up-left"  data-aos-easing="ease-in-back" data-aos-delay="500">
-        <div className="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3  shadow-lg">
-          <div className="col-lg-12 p-3 p-lg-5 pt-lg-3">
-            <h2 className="display-4 fw-bold lh-1 text-light font-shalimar click-pointer" onClick={()=>{
-              window.location.href = '/yoga'
-            }}> 
-            <span style={{color:'gold'}}>Yoga &nbsp;</span>
-            - Perform Yoga. We pay you for that.
-
-            </h2>
-      </div>
-        </div>
-      </div>
       
-      <UpperFooter />
-      <Footer/>
     </div>
     
     </>
