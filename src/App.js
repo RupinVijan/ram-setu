@@ -24,23 +24,15 @@ function App() {
      <Routes>
         <Route path="/" element={<Satyug />} />
         <Route path="/about" element={<Homee />} />
-    {/* <div className="App">
-      {window.location.href.includes("ram-setu") ? (
-        <video autoPlay muted loop id="myBGVideo">
-          <source src={Bg_Video} type=""></source>
-        </video>
-      ) : null} */}
         <Route path="/ram-setu/" element={<Home />} />
         <Route path="/ram-setu/setu" element={<Setu />} />
         <Route path="/ram-setu/mask" element={<Mask />} />
         <Route path="/ram-setu/contact" element={<Contact />} />
         <Route path="/ram-setu/ram-sita" element={<RamSita />} />
-    {/* </div> */}
         <Route path="/navigator" element={<Navigator />} />
         <Route path="/yog" element={<Yog />} />
         <Route path="/dhyana" element={<Dhyana />} />
         <Route path="/yogaToken" element={<YogaToken />} />
-        {/* <Route path="/test" element={<TestModal />} /> */}
         <Route path="/dhyanaToken" element={<DhyanaToken />} />
         <Route path="/coming-soon" element={<ComingSoon />} />
         <Route path="/*" element={<NotFound />} />
