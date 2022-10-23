@@ -7,6 +7,7 @@ import UpperFooter from "../components/UpperFooter";
 import cs from "./Home.module.css"
 
 function Home() {
+  const v1 = "https://res.cloudinary.com/dde6glimb/video/upload/v1666530742/earth_lymmu1.mp4";
   useEffect(() => {
     AOS.init()
     window.scrollTo(0,0);
@@ -15,7 +16,7 @@ function Home() {
     <>
     <div className="homeIndex ">
 
-    <video  src="https://res.cloudinary.com/dde6glimb/video/upload/v1666469477/2_zvzjrj.mp4" autoPlay playsInline loop  className={cs.video}/>
+    <video  src={v1} autoPlay playsInline loop  className={cs.video}/>
       <div className="HomeDiv container">
         <div className="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3  shadow-lg">
           <div className="col-lg-12 p-3 p-lg-5 pt-lg-3">
