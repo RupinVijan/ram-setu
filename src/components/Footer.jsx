@@ -34,7 +34,7 @@ const Footer = () => {
             </a>
             <a
               className="ms-3 iconsPoint"
-              href="https://satyug.life/"
+              href="https://github.com/RupinVijan/ram-setu"
               rel="noreferrer"
             >
               <svg
