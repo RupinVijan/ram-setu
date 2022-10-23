@@ -51,13 +51,13 @@
 
 .SkipButtonUniversal{
   width: auto;
-  height: 50px;
-  background: #42f74e;
-  border: solid 1px #000;
-  color: #000;
+  /* height: 50px; */
+  background: gold;
+  border: solid 1px #fff;
+  color: #fff;
   right: 30px;
   bottom: 30px;
-  padding: 10px;
+  padding: 5px 15px;
   border-radius: 10px;
   position: absolute;
 }
