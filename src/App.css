@@ -48,6 +48,28 @@
   font-weight: 500;
   z-index: 10;
 }
+
+.SkipButtonUniversal{
+  width: auto;
+  height: 50px;
+  background: #42f74e;
+  border: solid 1px #000;
+  color: #000;
+  right: 30px;
+  bottom: 30px;
+  padding: 10px;
+  border-radius: 10px;
+  position: absolute;
+}
+
+.SkipButtonUniversalContainer{
+  padding: 5px;
+  gap: 5px;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .click-pointer:hover{
   cursor: pointer;
   text-decoration: underline;
