@@ -14,7 +14,7 @@ const Modal = ({ onRequestClose,pathName }) => {
   const [walletConnected, setWalletConnected] = useState(false);
   const [preLoader, setPreLoader] = useState(false);
   const navigate = useNavigate();
-  const { connectWallet, currentAccount, disconnectWallet } =
+  const { connectWallet, currentAccount, disconnectWallet, connectWeb3Wallet } =
     React.useContext(WalletContext);
     let pageName = "";
     if(pathName === "/yogaToken") {
@@ -38,6 +38,7 @@ const Modal = ({ onRequestClose,pathName }) => {
 
   const handleSubmitWallet = () => {
     connectWallet();
+    // connectWeb3Wallet();
     console.log(currentAccount);
     currentAccount === ""
       ? setWalletConnected(false)
