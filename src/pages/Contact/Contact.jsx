@@ -30,8 +30,8 @@ const Contact = () => {
   
   const save = async () => {
 
-    window.localStorage.setItem("name", name);
-    window.localStorage.setItem("number", number);
+    // window.localStorage.setItem("name", name);
+    // window.localStorage.setItem("number", number);
     console.log("item saved", name, number);
     modal.current.style.display = 'none';
     noinput.current.style.display = 'none';

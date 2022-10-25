@@ -119,7 +119,7 @@ const Modal = ({ onRequestClose,pathName }) => {
               className="modalButton"
               type="button"
               onClick={() => {
-                window.location.href = "/navigator";
+                navigate("/navigator");
               }}
             >
               X

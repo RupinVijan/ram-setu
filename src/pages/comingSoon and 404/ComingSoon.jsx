@@ -1,8 +1,10 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 
 function ComingSoon() {
-    setInterval(() => {
-        window.location.href="/"
+  const navigate = useNavigate()
+    setTimeout(() => {
+        navigate("/")
     }, 4000);
   return (
     <div style={{"backgroundColor" : "#000"}}>

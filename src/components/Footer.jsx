@@ -1,7 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./../assets/css/Footer.css";
 
 const Footer = () => {
+  const navigate = useNavigate()
   return (
     <>
       <div className="d-flex flex-wrap justify-content-end align-item-center py-3 my-4 border-top lowerFooter">
@@ -9,7 +11,7 @@ const Footer = () => {
           <span
             className="mb-3 mb-md-0 text-muted click-pointer"
             onClick={() => {
-              window.location.href = "/";
+              navigate("/");
             }}
           >
             {" "}
