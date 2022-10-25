@@ -86,7 +86,7 @@ function Home() {
           <div className="col-lg-12 p-3 p-lg-5 pt-lg-3">
             <h2 className="display-4 fw-bold lh-1 text-light font-shalimar click-pointer" onClick={()=>{
               
-              navigate('/');
+              navigate('/coming-soon');
             }}> 
             <span style={{color:'gold'}}>Darshan &nbsp;</span>
             - Virtual Religious Tourism in VR. 
@@ -111,7 +111,7 @@ function Home() {
         <div className="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3  shadow-lg">
           <div className="col-lg-12 p-3 p-lg-5 pt-lg-3">
             <h2 className="display-4 fw-bold lh-1 text-light font-shalimar click-pointer" onClick={()=>{
-              navigate('/yoga');
+              navigate('/yog');
             }}> 
             <span style={{color:'gold'}}>Yoga &nbsp;</span>
             - Perform Yoga. We pay you for that.
