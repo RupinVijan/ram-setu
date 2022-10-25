@@ -59,7 +59,7 @@ const Contact = () => {
     });
 
     let data = await response.text();
-    console.log(data);
+    // console.log(data);
 
 
     // let blockDiv = document.querySelector('.targetAnimation');
